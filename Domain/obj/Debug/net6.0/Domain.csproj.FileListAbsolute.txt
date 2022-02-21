@@ -1,0 +1,12 @@
+/home/jan/Coding/Projects/issue-tracker/Domain/bin/Debug/net6.0/Domain.deps.json
+/home/jan/Coding/Projects/issue-tracker/Domain/bin/Debug/net6.0/Domain.dll
+/home/jan/Coding/Projects/issue-tracker/Domain/bin/Debug/net6.0/ref/Domain.dll
+/home/jan/Coding/Projects/issue-tracker/Domain/bin/Debug/net6.0/Domain.pdb
+/home/jan/Coding/Projects/issue-tracker/Domain/obj/Debug/net6.0/Domain.csproj.AssemblyReference.cache
+/home/jan/Coding/Projects/issue-tracker/Domain/obj/Debug/net6.0/Domain.GeneratedMSBuildEditorConfig.editorconfig
+/home/jan/Coding/Projects/issue-tracker/Domain/obj/Debug/net6.0/Domain.AssemblyInfoInputs.cache
+/home/jan/Coding/Projects/issue-tracker/Domain/obj/Debug/net6.0/Domain.AssemblyInfo.cs
+/home/jan/Coding/Projects/issue-tracker/Domain/obj/Debug/net6.0/Domain.csproj.CoreCompileInputs.cache
+/home/jan/Coding/Projects/issue-tracker/Domain/obj/Debug/net6.0/Domain.dll
+/home/jan/Coding/Projects/issue-tracker/Domain/obj/Debug/net6.0/ref/Domain.dll
+/home/jan/Coding/Projects/issue-tracker/Domain/obj/Debug/net6.0/Domain.pdb

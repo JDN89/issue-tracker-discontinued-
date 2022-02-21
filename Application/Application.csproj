@@ -9,9 +9,6 @@
     <Folder Include="Common\Behaviour" />
     <Folder Include="Common\Interfaces" />
     <Folder Include="Common\Mappings" />
-    <Folder Include="Users\Commands" />
-    <Folder Include="Users\Handlers" />
-    <Folder Include="Users\Queries" />
   </ItemGroup>
 
   <PropertyGroup>
