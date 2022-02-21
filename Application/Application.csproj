@@ -7,7 +7,6 @@
 
   <ItemGroup>
     <Folder Include="Common\Behaviour" />
-    <Folder Include="Common\Interfaces" />
     <Folder Include="Common\Mappings" />
   </ItemGroup>
 

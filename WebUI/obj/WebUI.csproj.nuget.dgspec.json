@@ -96,6 +96,12 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -201,6 +207,12 @@
             "projectReferences": {
               "/home/jan/Coding/Projects/issue-tracker/Application/Application.csproj": {
                 "projectPath": "/home/jan/Coding/Projects/issue-tracker/Application/Application.csproj"
+              },
+              "/home/jan/Coding/Projects/issue-tracker/Domain/Domain.csproj": {
+                "projectPath": "/home/jan/Coding/Projects/issue-tracker/Domain/Domain.csproj"
+              },
+              "/home/jan/Coding/Projects/issue-tracker/Infrastructure/Infrastructure.csproj": {
+                "projectPath": "/home/jan/Coding/Projects/issue-tracker/Infrastructure/Infrastructure.csproj"
               }
             }
           }
@@ -218,6 +230,12 @@
             "MediatR.Extensions.Microsoft.DependencyInjection": {
               "target": "Package",
               "version": "[10.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.2, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",

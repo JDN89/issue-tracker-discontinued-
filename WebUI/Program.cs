@@ -1,7 +1,6 @@
-using Application;
 using Infrastructure.Persistence;
-using MediatR;
 using Microsoft.EntityFrameworkCore;
+using WebUI.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,11 +12,7 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddDbContext<DataContext>(opt => { opt.UseNpgsql(connectionString); });
-builder.Services.AddCors(opt =>
-    opt.AddPolicy("CorsPolicy",
-        policy => { policy.AllowAnyMethod().AllowAnyHeader().WithOrigins("https://localhost:3333"); }));
-builder.Services.AddMediatR(typeof(MediatREntrypoint).Assembly);
+builder.Services.AddApplicationsServices(builder.Configuration);
 
 var app = builder.Build();
 await EnsureDb(app.Services, app.Logger);
