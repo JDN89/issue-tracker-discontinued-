@@ -2,11 +2,8 @@ using System.Text;
 using Application.Common.Services;
 using Domain.Entities;
 using Infrastructure.Persistence;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
-using System.IdentityModel.Tokens.Jwt;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 namespace WebUI.Extensions;
 
