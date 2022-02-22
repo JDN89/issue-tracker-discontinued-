@@ -47,3 +47,10 @@
 /home/jan/Coding/Projects/issue-tracker/WebUI/bin/Debug/net6.0/Microsoft.Extensions.Caching.Memory.dll
 /home/jan/Coding/Projects/issue-tracker/WebUI/bin/Debug/net6.0/Microsoft.Extensions.Identity.Core.dll
 /home/jan/Coding/Projects/issue-tracker/WebUI/bin/Debug/net6.0/Microsoft.Extensions.Identity.Stores.dll
+/home/jan/Coding/Projects/issue-tracker/WebUI/bin/Debug/net6.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/home/jan/Coding/Projects/issue-tracker/WebUI/bin/Debug/net6.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/home/jan/Coding/Projects/issue-tracker/WebUI/bin/Debug/net6.0/Microsoft.IdentityModel.Logging.dll
+/home/jan/Coding/Projects/issue-tracker/WebUI/bin/Debug/net6.0/Microsoft.IdentityModel.Protocols.dll
+/home/jan/Coding/Projects/issue-tracker/WebUI/bin/Debug/net6.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/home/jan/Coding/Projects/issue-tracker/WebUI/bin/Debug/net6.0/Microsoft.IdentityModel.Tokens.dll
+/home/jan/Coding/Projects/issue-tracker/WebUI/bin/Debug/net6.0/System.IdentityModel.Tokens.Jwt.dll

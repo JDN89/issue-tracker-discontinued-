@@ -1,9 +1,13 @@
 using System.Text;
+using Application.Common.Services;
 using Domain.Entities;
 using Infrastructure.Persistence;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
-
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 namespace WebUI.Extensions;
 
 public static class IdentityServiceExtensions
@@ -14,7 +18,7 @@ public static class IdentityServiceExtensions
         services.AddIdentityCore<AppUser>(opt =>
             {
                 opt.Password.RequireNonAlphanumeric = false;
-               // opt.SignIn.RequireConfirmedEmail = true;
+                // opt.SignIn.RequireConfirmedEmail = true;
             })
             .AddEntityFrameworkStores<DataContext>()
             .AddSignInManager<SignInManager<AppUser>>()
@@ -32,8 +36,9 @@ public static class IdentityServiceExtensions
                     ValidateIssuer = false,
                     ValidateAudience = false,
                     ValidateLifetime = true,
-                    ClockSkew = TimeSpan.Zero
+                  //  ClockSkew = TimeSpan.Zero
                 };
+               /* 
                 opt.Events = new JwtBearerEvents
                 {
                     OnMessageReceived = context =>
@@ -47,14 +52,15 @@ public static class IdentityServiceExtensions
 
                         return Task.CompletedTask;
                     }
-                };
+                }; */
             });
-
+/*
         services.AddAuthorization(opt =>
         {
             opt.AddPolicy("IsActivityHost", policy => { policy.Requirements.Add(new IsHostRequirement()); });
         });
         services.AddTransient<IAuthorizationHandler, IsHostRequirementHandler>();
+        */
         services.AddScoped<TokenService>();
 
         return services;
