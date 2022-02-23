@@ -61,6 +61,7 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+    //app.UseSpa(builder => builder.UseProxyToSpaDevelopmentServer("https://localhost:3333/"));
 }
 
 app.UseHttpsRedirection();
