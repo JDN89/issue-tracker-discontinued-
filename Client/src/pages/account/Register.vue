@@ -89,7 +89,7 @@ onUpdated(() => {
         <Field
           name="confirmPassword"
           type="password"
-          placeholder="Password"
+          placeholder="Confirm Password"
           class="field"
         />
         <ErrorMessage name="confirmPassword" class="errorMessage" />
