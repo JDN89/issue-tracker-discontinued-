@@ -4,8 +4,7 @@
 
 declare module 'vue' {
   export interface GlobalComponents {
-    NavBarGuest: typeof import('./components/NavBarGuest.vue')['default']
-    README: typeof import('./components/README.md')['default']
+    HeaderGuest: typeof import('./src/components/HeaderGuest.vue')['default']
   }
 }
 
