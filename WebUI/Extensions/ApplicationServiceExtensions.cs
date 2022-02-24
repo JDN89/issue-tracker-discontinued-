@@ -48,18 +48,7 @@ public static class ApplicationServiceExtensions
             options.UseNpgsql(connStr);
         });
 
-        services.AddCors(opt =>
-        {
-            opt.AddPolicy("CorsPolicy", policy =>
-            {
-                policy
-                    .AllowAnyMethod()
-                    .AllowAnyHeader()
-                    .AllowCredentials()
-                    .WithExposedHeaders("WWW-Authenticate", "Pagination")
-                    .WithOrigins("http://localhost:3333");
-            });
-        });
+ 
         services.AddMediatR(typeof(MediatREntrypoint).Assembly);
         //  services.AddAutoMapper(typeof(MappingProfiles).Assembly);
         // services.AddScoped<IUserAccessor, UserAccessor>();

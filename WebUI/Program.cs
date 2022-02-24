@@ -20,6 +20,7 @@ builder.Services.AddControllers(opt =>
 });
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddCors(); 
 builder.Services.AddSwaggerGen(x =>
 //add authorize to swagger and show which routes need authorization
     {
@@ -65,6 +66,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseRouting();
+app.UseCors(builder => builder.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
 // place before authorization
 app.UseAuthentication();
 
