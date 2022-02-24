@@ -40,7 +40,7 @@ onUpdated(() => {
   if (userStore.getRegistrationFormIsVisible === false) {
     setTimeout(() => {
       router.replace({
-        name: 'login',
+        name: 'account/login',
       })
     }, 2000)
   }
