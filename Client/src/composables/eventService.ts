@@ -1,5 +1,5 @@
 import axios from 'axios'
-import type { CreateUserInterface } from '../types/interfaces'
+import type { LoginUserInterface, RegisterUserInterface } from '../types/interfaces'
 
 const apiClient = axios.create({
   baseURL: import.meta.env.VITE_APP_API_URL,
@@ -10,10 +10,10 @@ export default {
 
   // ===========  User Requests  ===============
 
-  async registerUser(user: CreateUserInterface) {
+  async registerUser(user: RegisterUserInterface) {
     return await apiClient.post('account/register', user)
   },
-  async loginUser(user: CreateUserInterface) {
+  async loginUser(user: LoginUserInterface) {
     return await apiClient.post('account/login', user)
   },
 
