@@ -56,6 +56,8 @@ export const useUserStore = defineStore('user', {
     // don't return sensitive data, only id
     // =========================================
     async loginUser(user: CreateUserInterface) {
+      console.log(this.loginData)
+
       await EventService.loginUser(user)
         .then((res) => {
           this.token = res.data
@@ -66,8 +68,8 @@ export const useUserStore = defineStore('user', {
         .catch((error) => {
           if (axios.isAxiosError(error)) {
             if (error.response) {
-               console.log(error.response?.data)
-               console.log(error.response.status)
+              console.log(error.response?.data)
+              console.log(error.response.status)
               console.log(error.response.headers)
             }
             else if (error.request) {
@@ -78,7 +80,7 @@ export const useUserStore = defineStore('user', {
             }
             else {
               // Something happened in setting up the request that triggered an Error
-               console.log('Error', error.message)
+              console.log('Error', error.message)
             }
           }
         })

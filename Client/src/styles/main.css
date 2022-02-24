@@ -17,7 +17,7 @@ html.dark {
 }
 
 #nprogress .bar {
-  background: rgb(13,148,136);
+  background: rgb(13, 148, 136);
   opacity: 0.75;
   position: fixed;
   z-index: 1031;
@@ -25,4 +25,22 @@ html.dark {
   left: 0;
   width: 100%;
   height: 2px;
+}
+
+.field {
+  @apply border-teal-500 border rounded-2xl 
+  hover:border-2 hover:border-teal-500
+    dark:border-1 dark:border-gray-400 dark:hover:border-teal-300
+   bg-emerald-300 hover:bg-teal-600
+   dark:bg-dark-200 dark:hover:bg-gray-600
+   text:black dark:text-gray-50
+   hover:text-red-900 dark:hover:text-teal-300
+
+  mx-auto
+  min-w-xs my-2 pl-3
+  
+
+  
+  text-left
+  overflow-hidden;
 }
