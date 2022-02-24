@@ -3,6 +3,17 @@ export interface CreateUserInterface {
   password: string
 }
 
+export interface LoginUserInterface {
+  userName: string
+  password: string
+}
+
+export interface RegisterUserInterface {
+  userName: string
+  email: string
+  password: string
+}
+
 export interface UserInterface {
   id: number
   email: string

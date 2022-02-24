@@ -1,12 +1,12 @@
 // @ts-check
 import { acceptHMRUpdate, defineStore } from 'pinia'
 import axios from 'axios'
-import type { CreateUserInterface } from '~/types/interfaces'
+import type { RegisterUserInterface } from '~/types/interfaces'
 import eventService from '~/composables/eventService'
 
 interface State {
   registrationFormIsVisible: boolean
-  userData: CreateUserInterface | null
+  userRegistrationData: RegisterUserInterface | null
 
   token: string | null
 }
@@ -15,7 +15,7 @@ export const useUserStore = defineStore({
   id: 'user',
   state: (): State => ({
     registrationFormIsVisible: true,
-    userData: null,
+    userRegistrationData: null,
     token: null,
   }),
 
@@ -32,10 +32,12 @@ export const useUserStore = defineStore({
     }, */
 
     async registerUser() {
-      if (this.userData) {
-        await eventService.registerUser(this.userData)
+      if (this.userRegistrationData) {
+        console.log(this.userRegistrationData)
+
+        await eventService.registerUser(this.userRegistrationData)
           .then(() => {
-            this.userData = null
+            this.userRegistrationData = null
             this.registrationFormIsVisible = false
           })
           .catch((error) => {
@@ -60,6 +62,11 @@ export const useUserStore = defineStore({
       }
     },
 
+  },
+  getters: {
+    getLoginData: (state: State) => state.userRegistrationData,
+    getToken: (state: State) => state.token,
+    getRegistrationFormIsVisible: (state: State) => state.registrationFormIsVisible,
   },
 })
 

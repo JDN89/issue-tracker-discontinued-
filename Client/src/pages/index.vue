@@ -10,8 +10,8 @@ const go = () => {
 
 <template>
   <div>
-<HeaderGuest />
-  
+    <HeaderGuest />
+
     <p>
       <a rel="noreferrer" href="https://github.com/antfu/vitesse-lite" target="_blank">
         Vitesse Lite

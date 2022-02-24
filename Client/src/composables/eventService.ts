@@ -11,10 +11,10 @@ export default {
   // ===========  User Requests  ===============
 
   async registerUser(user: CreateUserInterface) {
-    return await apiClient.post('/register', user)
+    return await apiClient.post('account/register', user)
   },
   async loginUser(user: CreateUserInterface) {
-    return await apiClient.post('/login', user)
+    return await apiClient.post('account/login', user)
   },
 
 }
