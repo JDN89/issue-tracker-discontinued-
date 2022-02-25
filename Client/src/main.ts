@@ -14,6 +14,16 @@ const router = createRouter({
   routes,
 })
 
+router.beforeEach((to, from, next) => {
+  if (to.meta?.requiresAuth && window.localStorage.getItem('token') && window.localStorage.getItem('username'))
+
+    next()
+
+  else if (to.meta?.requiresAuth) next('/account/login')
+
+  else next()
+})
+
 app.use(router)
 app.use(createPinia())
 app.mount('#app')
