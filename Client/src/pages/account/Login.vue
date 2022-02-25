@@ -33,11 +33,8 @@ const onSubmit = handleSubmit(async() => {
   // logindata are the form values that the user filled inf
   if (userStore.getLoginData) {
     await userStore.loginUser(userStore.getLoginData)
-    if (userStore.getToken !== null) {
-      router.replace({
-        name: 'user/myprojects',
-      })
-    }
+    if (userStore.getToken !== null && userStore.getUsername !== null)
+      router.push(`/hi/${encodeURIComponent(userStore.getUsername)}`)
   }
   else { console.error('login failed, could\'t retrieve login data') }
 })
