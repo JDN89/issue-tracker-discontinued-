@@ -9,6 +9,7 @@ interface State {
   userRegistrationData: RegisterUserInterface | null
   loginData: LoginUserInterface|null
   token: string | null
+  username: string|null
 }
 
 export const useUserStore = defineStore({
@@ -18,6 +19,8 @@ export const useUserStore = defineStore({
     userRegistrationData: null,
     loginData: null,
     token: null,
+    username: null,
+
   }),
 
   actions: {
@@ -70,9 +73,13 @@ export const useUserStore = defineStore({
     async loginUser(user: LoginUserInterface) {
       await eventService.loginUser(user)
         .then((res) => {
-          this.token = res.data
+          this.token = res.data.token
+          this.username = res.data.username
+
           if (this.token == null) return console.error('no token set')
-          window.sessionStorage.setItem('token', this.token)
+          window.localStorage.setItem('token', this.token)
+          if (this.username == null) return console.error('no username set')
+          window.localStorage.setItem('username', this.username)
           this.loginData = null
         })
         .catch((error) => {
@@ -95,10 +102,21 @@ export const useUserStore = defineStore({
           }
         })
     },
+
+    // =========================================
+    // ===========   LOGOUT  ===============
+    // =========================================
+    logout() {
+      window.localStorage.removeItem('token')
+      window.localStorage.removeItem('username')
+    },
+
   },
+
   getters: {
     getLoginData: (state: State) => state.loginData,
     getToken: (state: State) => state.token,
+    getUsername: (state: State) => state.username,
     getRegistrationFormIsVisible: (state: State) => state.registrationFormIsVisible,
   },
 })
