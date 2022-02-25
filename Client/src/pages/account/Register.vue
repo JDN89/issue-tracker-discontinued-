@@ -39,8 +39,8 @@ const router = useRouter()
 onUpdated(() => {
   if (userStore.getRegistrationFormIsVisible === false) {
     setTimeout(() => {
-      router.replace({
-        name: 'account/login',
+      router.push({
+        name: 'acount/login',
       })
     }, 2000)
   }
