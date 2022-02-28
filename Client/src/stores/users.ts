@@ -102,6 +102,42 @@ export const useUserStore = defineStore({
           }
         })
     },
+    // ===================================
+    // ===========  RETRIEVE SESSION  ===============
+    // ===================================
+
+    // async retrieveSession(token: string) {
+    //   await eventService.retrieveSession(token)
+    //     .then((res) => {
+    //       this.token = res.data.token
+    //       this.username = res.data.username
+
+    //       if (this.token == null) return console.error('no token set')
+    //       window.localStorage.setItem('token', this.token)
+    //       if (this.username == null) return console.error('no username set')
+    //       window.localStorage.setItem('username', this.username)
+    //       this.loginData = null
+    //     })
+    //     .catch((error) => {
+    //       if (axios.isAxiosError(error)) {
+    //         if (error.response) {
+    //           console.log(error.response?.data)
+    //           console.log(error.response.status)
+    //           console.log(error.response.headers)
+    //         }
+    //         else if (error.request) {
+    //           // The request was made but no response was received
+    //           // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
+    //           // http.ClientRequest in node.js
+    //           console.log(error.request)
+    //         }
+    //         else {
+    //           // Something happened in setting up the request that triggered an Error
+    //           console.log('Error', error.message)
+    //         }
+    //       }
+    //     })
+    // },
 
     // =========================================
     // ===========   LOGOUT  ===============

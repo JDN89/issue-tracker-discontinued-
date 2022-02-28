@@ -17,4 +17,7 @@ export default {
     return await apiClient.post('account/login', user)
   },
 
+  // async retrieveSession(token: string) {
+  //   return await apiClient.post('account/retrieveSession', token)
+  // },
 }

@@ -41,7 +41,7 @@ export default defineConfig({
       shortcuts: [
         ['btn', 'px-4 py-1 rounded inline-block bg-teal-600 text-white cursor-pointer hover:bg-teal-700 disabled:cursor-default disabled:bg-gray-600 disabled:opacity-50'],
         ['icon-btn', 'text-[0.9em] inline-block cursor-pointer select-none opacity-75 transition duration-200 ease-in-out hover:opacity-100 hover:text-teal-600'],
-        ['field', 'border-grey-600 border rounded-2xl hover:border-2 dark:border-1 dark:border-gray-400 dark:hover:border-light-100 hover:bg-blue-gray-100 dark:bg-dark-200 dark:hover:bg-gray-600 mx-auto min-w-xs my-2 pl-3 text-left overflow-hidden'],
+        ['field', 'border rounded-2xl hover:border-2 dark:border-1 dark:border-gray-400 dark:hover:border-light-100 hover:bg-blue-gray-100 dark:bg-dark-200 dark:hover:bg-gray-600 mx-auto min-w-xs my-2 pl-3 text-left overflow-hidden'],
         ['hover', 'cursor-pointer transform transition ease-in-out duration-200 duration-500  select-none sm:hover:scale-109 xl:hover:scale-110'],
       ],
       presets: [
