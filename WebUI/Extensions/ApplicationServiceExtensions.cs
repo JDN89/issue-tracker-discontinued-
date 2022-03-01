@@ -48,7 +48,7 @@ public static class ApplicationServiceExtensions
             options.UseNpgsql(connStr);
         });
 
- 
+        services.AddHttpContextAccessor(); 
         services.AddMediatR(typeof(MediatREntrypoint).Assembly);
         //  services.AddAutoMapper(typeof(MappingProfiles).Assembly);
         // services.AddScoped<IUserAccessor, UserAccessor>();

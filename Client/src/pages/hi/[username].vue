@@ -3,28 +3,31 @@
 import HeaderUser from '~/components/HeaderUser.vue'
 const props = defineProps<{ username: string }>()
 
+const projects: string[] = ['project 1', 'project 2', 'project 3', ' project 4']
+
 </script>
 
 <template>
   <HeaderUser />
-  <div class="prose my-4">
-    <h1 text-2xl>
-      Hi, {{ props.username }}
-    </h1>
-  </div>
 
-  <h2 my-2 text-xl>
-    you're Authorized to access this route
-  </h2>
-  <p>
-    Reload this page and you'll still be logged in and send to this page.
-    <br my-1>
-    Same for when you go to another webpage and then come back.
-    <br my-1>
-    Delete token or username from localStorage, and you'll be send to the login page upon leaving or refreshing.
-    <br>
-    you'll also be unauthorized to access the 'hi/[username].vue' page, until you login again.
-  </p>
+  <div id="container" class="flex flex-row mx-auto justify-center">
+    <div id="main" class="order-2 flex-1 prose h-96 bg-blue-100">
+      <h1 text-2xl>
+        Hi, {{ props.username }}
+      </h1>
+      <h2 text-2xl>
+        Button and container for adding a new project go here
+      </h2>
+    </div>
+    <div id="sidebar" class="min-w-24 max-w-44 bg-red-400 order-1 flex-1">
+      <p>test</p>
+      <ul>
+        <li v-for="project in projects" :key="project" class="border border-dark-50">
+          {{ project }}
+        </li>
+      </ul>
+    </div>
+  </div>
 </template>
 
 <route lang="yaml">
