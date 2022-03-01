@@ -1,8 +1,11 @@
 
 <script setup lang="ts">
+import draggable from 'vuedraggable'
 import HeaderUser from '~/components/HeaderUser.vue'
 
 const props = defineProps<{ username: string }>()
+
+const drag = false
 
 const projects: string[] = ['project 1', 'project 2', 'project 3', ' project 4']
 interface Issue {
@@ -181,12 +184,29 @@ const openIssue: Issue[] = [{
       </h1>
       <div id="Kaban-Board" class="flex flex-1 rounded-border flex-grow-1 flex-shrink-0 flex-row bg-yellow-300">
         <div id="Open" class="flex-1 min-w-34 max-w-52 bg-green-400 order-1 min-h-lg max-h-screen ">
-          <h1> openIssue</h1>
-          <ul class="flex-col">
+          <h1 text-3xl>
+            openIssue
+          </h1>
+
+          <draggable
+            v-model="openIssue"
+            group="people"
+            item-key="slkdjflskfj"
+            @dragstart="drag=true"
+            @dragend="drag=false"
+          >
+            <template #item="{ element, index }">
+              <div class="square-border my-2">
+                {{ element.title }} {{ index }}
+              </div>
+            </template>
+          </draggable>
+
+          <!-- <ul class="flex-col">
             <li v-for="issue in openIssue" :key="issue.id" class="square-border my-2">
               {{ issue.title }}
             </li>
-          </ul>
+          </ul> -->
         </div>
       </div>
     </div>
