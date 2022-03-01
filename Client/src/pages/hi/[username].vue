@@ -15,6 +15,8 @@ interface Issue {
 
 }
 
+// console.log(draggable.data)
+
 // const columns = [
 //   {
 //     title: 'Backlog',
@@ -132,7 +134,7 @@ interface Issue {
 //   },
 // ]
 
-const openIssue: Issue[] = reactive(
+let openIssue: Issue[] = reactive(
 
   [{
     id: 1,
@@ -173,6 +175,20 @@ const openIssue: Issue[] = reactive(
   ],
 )
 
+watch(openIssue, (currentValue, oldValue) => {
+  // watch for changes in order of list and simply overwrite the db upon list change order
+  // the new state can't be persisted anyway
+  // simply delete and overwrite a table?
+  // can be expensive but I don;t see another way to persist the state of the data
+  openIssue = currentValue
+  console.log(openIssue)
+
+  console.log(currentValue)
+  console.log('border')
+
+  console.log(oldValue)
+})
+
 </script>
 
 <template>
@@ -196,7 +212,9 @@ const openIssue: Issue[] = reactive(
             item-key="openIssue"
           >
             <template #item="{ element }">
-              <div class="square-border my-2">
+              <div
+                class="square-border my-2"
+              >
                 {{ element.title }}
               </div>
             </template>
