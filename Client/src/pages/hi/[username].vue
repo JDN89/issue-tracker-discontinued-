@@ -5,8 +5,6 @@ import HeaderUser from '~/components/HeaderUser.vue'
 
 const props = defineProps<{ username: string }>()
 
-const drag = false
-
 const projects: string[] = ['project 1', 'project 2', 'project 3', ' project 4']
 interface Issue {
   id: number
@@ -134,43 +132,46 @@ interface Issue {
 //   },
 // ]
 
-const openIssue: Issue[] = [{
-  id: 1,
-  title: 'Add discount code to checkout page',
-  date: 'Sep 14',
-  type: 'Feature Request',
-  urgency: 'low',
-},
-{
-  id: 2,
-  title: 'Provide documentation on integrations',
-  date: 'Sep 12',
-  type: 'Feature Request',
-  urgency: 'low',
-},
-{
-  id: 3,
-  title: 'Design shopping cart dropdown',
-  date: 'Sep 9',
-  type: 'Design',
-  urgency: 'low',
-},
-{
-  id: 4,
-  title: 'Add discount code to checkout page',
-  date: 'Sep 14',
-  type: 'Feature Request',
-  urgency: 'low',
-},
-{
-  id: 5,
-  title: 'Test checkout flow',
-  date: 'Sep 15',
-  type: 'QA',
-  urgency: 'low',
-},
+const openIssue: Issue[] = reactive(
 
-]
+  [{
+    id: 1,
+    title: 'Add discount code to checkout page',
+    date: 'Sep 14',
+    type: 'Feature Request',
+    urgency: 'low',
+  },
+  {
+    id: 2,
+    title: 'Provide documentation on integrations',
+    date: 'Sep 12',
+    type: 'Feature Request',
+    urgency: 'low',
+  },
+  {
+    id: 3,
+    title: 'Design shopping cart dropdown',
+    date: 'Sep 9',
+    type: 'Design',
+    urgency: 'low',
+  },
+  {
+    id: 4,
+    title: 'Add discount code to checkout page',
+    date: 'Sep 14',
+    type: 'Feature Request',
+    urgency: 'low',
+  },
+  {
+    id: 5,
+    title: 'Test checkout flow',
+    date: 'Sep 15',
+    type: 'QA',
+    urgency: 'low',
+  },
+
+  ],
+)
 
 </script>
 
@@ -189,24 +190,17 @@ const openIssue: Issue[] = [{
           </h1>
 
           <draggable
-            v-model="openIssue"
+
+            :list="openIssue"
             group="people"
-            item-key="slkdjflskfj"
-            @dragstart="drag=true"
-            @dragend="drag=false"
+            item-key="openIssue"
           >
-            <template #item="{ element, index }">
+            <template #item="{ element }">
               <div class="square-border my-2">
-                {{ element.title }} {{ index }}
+                {{ element.title }}
               </div>
             </template>
           </draggable>
-
-          <!-- <ul class="flex-col">
-            <li v-for="issue in openIssue" :key="issue.id" class="square-border my-2">
-              {{ issue.title }}
-            </li>
-          </ul> -->
         </div>
       </div>
     </div>
