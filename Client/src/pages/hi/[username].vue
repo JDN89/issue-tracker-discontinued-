@@ -180,6 +180,7 @@ watch(openIssue, (currentValue, oldValue) => {
   // the new state can't be persisted anyway
   // simply delete and overwrite a table?
   // can be expensive but I don;t see another way to persist the state of the data
+  // mabe map over all the values and send then as update to sql, but will that change the index and order of the items?
   openIssue = currentValue
   console.log(openIssue)
 
