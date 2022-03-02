@@ -8,8 +8,6 @@ import type { Issue } from '~/types/interfaces'
 const props = defineProps<{ username: string }>()
 const store = useProjectStore()
 
-const projects: string[] = ['project 1', 'project 2', 'project 3', ' project 4']
-
 // console.log(draggable.data)
 
 // const columns = [
@@ -189,8 +187,8 @@ watch(openIssue, (currentValue, oldValue) => {
     <div id="sidebar" class="min-w-24 max-w-44 bg-red-400 order-1 flex-1">
       <p>test</p>
       <ul>
-        <li v-for="project in projects" :key="project" class="square-border">
-          {{ project }}
+        <li v-for="project in store.getProjects" :key="project.id" class="square-border">
+          {{ project.title }}
         </li>
       </ul>
       <button btn>
