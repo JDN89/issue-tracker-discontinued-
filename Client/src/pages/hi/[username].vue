@@ -6,14 +6,6 @@ import HeaderUser from '~/components/HeaderUser.vue'
 const props = defineProps<{ username: string }>()
 
 const projects: string[] = ['project 1', 'project 2', 'project 3', ' project 4']
-interface Issue {
-  id: number
-  title: string
-  date: string
-  type: string
-  urgency: string
-
-}
 
 // console.log(draggable.data)
 
@@ -181,6 +173,7 @@ watch(openIssue, (currentValue, oldValue) => {
   // simply delete and overwrite a table?
   // can be expensive but I don;t see another way to persist the state of the data
   // mabe map over all the values and send then as update to sql, but will that change the index and order of the items?
+// create project store and on update, receive new values and log then for now
   openIssue = currentValue
   console.log(openIssue)
 

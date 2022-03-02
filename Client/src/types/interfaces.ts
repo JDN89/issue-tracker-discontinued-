@@ -14,3 +14,12 @@ export interface NewMessageInterface {
   Title: string
   Body: string
 }
+
+export interface Issue {
+  id: number
+  title: string
+  date: string
+  type: string
+  urgency: string
+
+}
