@@ -10,8 +10,8 @@ const userStore = useUserStore()
 const schema = yup.object({
   email: yup.string().required().email(),
   userName: yup.string().required().min(4),
-  password: yup.string().required().min(8).matches(  /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/,
-      "Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and One Special Case Character"),
+  password: yup.string().required().min(8).matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/,
+    'Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and One Special Case Character'),
   confirmPassword: yup
     .string()
     .oneOf([yup.ref('password'), null], 'Confirmed password doesn\'t match')
