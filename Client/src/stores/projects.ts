@@ -2,17 +2,28 @@
 import { acceptHMRUpdate, defineStore } from 'pinia'
 import { v4 as uuidv4 } from 'uuid'
 // import axios from 'axios'
-import type { Issue } from '~/types/interfaces'
+import type { Issue, Project } from '~/types/interfaces'
 // import eventService from '~/composables/eventService'
 
 interface State {
   OpenIssues: Issue [] | null
+  Projects: Project []| null
 
 }
 
 export const useProjectStore = defineStore({
   id: 'Projects',
   state: (): State => ({
+    Projects: [
+      {
+        id: 'f18ebf07-3888-4cc6-b7b2-5de749ec5472',
+        title: 'Project 1',
+
+      },
+      {
+        id: uuidv4(),
+        title: 'Project 2',
+      }],
     OpenIssues: [{
       id: uuidv4(),
       title: 'Add discount code to checkout page',
@@ -20,6 +31,7 @@ export const useProjectStore = defineStore({
       date: 'Sep 14',
       type: 'Feature Request',
       urgency: 'low',
+      projectId: 'f18ebf07-3888-4cc6-b7b2-5de749ec5472',
 
     },
     {
@@ -30,6 +42,8 @@ export const useProjectStore = defineStore({
       date: 'Sep 12',
       type: 'Feature Request',
       urgency: 'low',
+      projectId: 'f18ebf07-3888-4cc6-b7b2-5de749ec5472',
+
     },
     {
       id: uuidv4(),
@@ -39,6 +53,7 @@ export const useProjectStore = defineStore({
       date: 'Sep 9',
       type: 'Design',
       urgency: 'low',
+      projectId: 'f18ebf07-3888-4cc6-b7b2-5de749ec5472',
     },
     {
       id: uuidv4(),
@@ -48,6 +63,7 @@ export const useProjectStore = defineStore({
       date: 'Sep 14',
       type: 'Feature Request',
       urgency: 'low',
+      projectId: 'f18ebf07-3888-4cc6-b7b2-5de749ec5472',
     },
     {
       id: uuidv4(),
@@ -57,6 +73,7 @@ export const useProjectStore = defineStore({
       date: 'Sep 15',
       type: 'QA',
       urgency: 'low',
+      projectId: 'f18ebf07-3888-4cc6-b7b2-5de749ec5472',
     },
 
     ],
@@ -86,6 +103,7 @@ export const useProjectStore = defineStore({
 
   getters: {
     getOpenIssues: (state: State) => state.OpenIssues,
+    getProjects: (state: State) => state.Projects,
 
   },
 })

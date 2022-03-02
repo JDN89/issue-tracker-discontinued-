@@ -22,10 +22,10 @@ export interface Issue {
   date: string
   type: string
   urgency: string
+  projectId: string
 
 }
 export interface Project {
   id: string
   title: string
-  userId: string
 }
