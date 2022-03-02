@@ -3,7 +3,6 @@
 import draggable from 'vuedraggable'
 import HeaderUser from '~/components/HeaderUser.vue'
 import { useProjectStore } from '~/stores/projects'
-import type { Issue } from '~/types/interfaces'
 
 const props = defineProps<{ username: string }>()
 const store = useProjectStore()
@@ -92,9 +91,6 @@ const store = useProjectStore()
 //     ],
 //   },
 // ]
-let openIssue: Issue[] = reactive([])
-if (store.getOpenIssues)
-  openIssue = store.getOpenIssues
 
 //   [{
 //     id: 1,
