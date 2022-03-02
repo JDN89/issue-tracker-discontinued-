@@ -89,6 +89,14 @@ export const useProjectStore = defineStore({
       })
     },
 
+    // =========================================
+    // ===========   UPDATE OPENISSUES  ===============
+    // only udpate don,t refresh list, state persists in Pinia while on page and gets loaded from db upon mount
+    // =========================================
+
+    async updateOpenIssuesDb(value: Issue[]) {
+      console.log(value)
+    },
     /*
     logout() {
       this.$patch({
