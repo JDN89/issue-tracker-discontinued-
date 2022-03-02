@@ -135,20 +135,8 @@ if (store.getOpenIssues)
 //   ],
 // )
 
-watch(openIssue, (currentValue, oldValue) => {
-  // watch for changes in order of list and simply overwrite the db upon list change order
-  // the new state can't be persisted anyway
-  // simply delete and overwrite a table?
-  // can be expensive but I don;t see another way to persist the state of the data
-  // mabe map over all the values and send then as update to sql, but will that change the index and order of the items?
-// create project store and on update, receive new values and log then for now
-  openIssue = currentValue
-  console.log(openIssue)
-
-  console.log(currentValue)
-  console.log('border')
-
-  console.log(oldValue)
+watch(store.getOpenIssues!, (value) => {
+  store.updateOpenIssuesDb(value)
 })
 
 </script>
@@ -169,7 +157,7 @@ watch(openIssue, (currentValue, oldValue) => {
 
           <draggable
 
-            :list="openIssue"
+            :list="store.getOpenIssues!"
             group="Issues"
             item-key="openIssue"
           >
