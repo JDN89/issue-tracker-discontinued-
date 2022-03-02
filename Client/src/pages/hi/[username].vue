@@ -2,49 +2,18 @@
 <script setup lang="ts">
 import draggable from 'vuedraggable'
 import HeaderUser from '~/components/HeaderUser.vue'
+import { useProjectStore } from '~/stores/projects'
+import type { Issue } from '~/types/interfaces'
 
 const props = defineProps<{ username: string }>()
+const store = useProjectStore()
 
 const projects: string[] = ['project 1', 'project 2', 'project 3', ' project 4']
 
 // console.log(draggable.data)
 
 // const columns = [
-//   {
-//     title: 'Backlog',
-//     tasks: [
-//       {
-//         id: 1,
-//         title: 'Add discount code to checkout page',
-//         date: 'Sep 14',
-//         type: 'Feature Request',
-//       },
-//       {
-//         id: 2,
-//         title: 'Provide documentation on integrations',
-//         date: 'Sep 12',
-//       },
-//       {
-//         id: 3,
-//         title: 'Design shopping cart dropdown',
-//         date: 'Sep 9',
-//         type: 'Design',
-//       },
-//       {
-//         id: 4,
-//         title: 'Add discount code to checkout page',
-//         date: 'Sep 14',
-//         type: 'Feature Request',
-//       },
-//       {
-//         id: 5,
-//         title: 'Test checkout flow',
-//         date: 'Sep 15',
-//         type: 'QA',
-//       },
-//     ],
-//   },
-//   {
+//  //   {
 //     title: 'In Progress',
 //     tasks: [
 //       {
@@ -125,47 +94,48 @@ const projects: string[] = ['project 1', 'project 2', 'project 3', ' project 4']
 //     ],
 //   },
 // ]
+let openIssue: Issue[] = reactive([])
+if (store.getOpenIssues)
+  openIssue = store.getOpenIssues
 
-let openIssue: Issue[] = reactive(
+//   [{
+//     id: 1,
+//     title: 'Add discount code to checkout page',
+//     date: 'Sep 14',
+//     type: 'Feature Request',
+//     urgency: 'low',
+//   },
+//   {
+//     id: 2,
+//     title: 'Provide documentation on integrations',
+//     date: 'Sep 12',
+//     type: 'Feature Request',
+//     urgency: 'low',
+//   },
+//   {
+//     id: 3,
+//     title: 'Design shopping cart dropdown',
+//     date: 'Sep 9',
+//     type: 'Design',
+//     urgency: 'low',
+//   },
+//   {
+//     id: 4,
+//     title: 'Add discount code to checkout page',
+//     date: 'Sep 14',
+//     type: 'Feature Request',
+//     urgency: 'low',
+//   },
+//   {
+//     id: 5,
+//     title: 'Test checkout flow',
+//     date: 'Sep 15',
+//     type: 'QA',
+//     urgency: 'low',
+//   },
 
-  [{
-    id: 1,
-    title: 'Add discount code to checkout page',
-    date: 'Sep 14',
-    type: 'Feature Request',
-    urgency: 'low',
-  },
-  {
-    id: 2,
-    title: 'Provide documentation on integrations',
-    date: 'Sep 12',
-    type: 'Feature Request',
-    urgency: 'low',
-  },
-  {
-    id: 3,
-    title: 'Design shopping cart dropdown',
-    date: 'Sep 9',
-    type: 'Design',
-    urgency: 'low',
-  },
-  {
-    id: 4,
-    title: 'Add discount code to checkout page',
-    date: 'Sep 14',
-    type: 'Feature Request',
-    urgency: 'low',
-  },
-  {
-    id: 5,
-    title: 'Test checkout flow',
-    date: 'Sep 15',
-    type: 'QA',
-    urgency: 'low',
-  },
-
-  ],
-)
+//   ],
+// )
 
 watch(openIssue, (currentValue, oldValue) => {
   // watch for changes in order of list and simply overwrite the db upon list change order
@@ -202,7 +172,7 @@ watch(openIssue, (currentValue, oldValue) => {
           <draggable
 
             :list="openIssue"
-            group="people"
+            group="Issues"
             item-key="openIssue"
           >
             <template #item="{ element }">

@@ -9,7 +9,7 @@ interface State {
 
 }
 
-export const useUserStore = defineStore({
+export const useProjectStore = defineStore({
   id: 'Projects',
   state: (): State => ({
     OpenIssues: [{
@@ -73,4 +73,4 @@ export const useUserStore = defineStore({
 })
 
 if (import.meta.hot)
-  import.meta.hot.accept(acceptHMRUpdate(useUserStore, import.meta.hot))
+  import.meta.hot.accept(acceptHMRUpdate(useProjectStore, import.meta.hot))
