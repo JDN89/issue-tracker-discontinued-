@@ -16,10 +16,16 @@ export interface NewMessageInterface {
 }
 
 export interface Issue {
-  id: number
+  id: string
   title: string
+  description: string
   date: string
   type: string
   urgency: string
 
+}
+export interface Project {
+  id: string
+  title: string
+  userId: string
 }
