@@ -45,7 +45,7 @@ export const useProjectStore = defineStore({
 
       date: 'Sep 12',
       type: 'Feature Request',
-      urgency: 'low',
+      urgency: 'high',
       projectId: 'f18ebf07-3888-4cc6-b7b2-5de749ec5472',
 
     },
@@ -55,8 +55,8 @@ export const useProjectStore = defineStore({
       description: '  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec nibh at urna fringilla posuere. Maecenas aliquam mollis faucibus. Nulla tempor diam massa, eget convallis arcu fringilla tempor. Nullam interdum, magna et cursus sodales, ex tellus sodales justo, ac rhoncus lacus libero vel ligula. Sed molestie a magna gravida blandit. ',
 
       date: 'Sep 9',
-      type: 'Design',
-      urgency: 'low',
+      type: 'QA',
+      urgency: 'medium',
       projectId: 'f18ebf07-3888-4cc6-b7b2-5de749ec5472',
     },
     {
@@ -66,7 +66,7 @@ export const useProjectStore = defineStore({
 
       date: 'Sep 14',
       type: 'Feature Request',
-      urgency: 'low',
+      urgency: 'high',
       projectId: 'f18ebf07-3888-4cc6-b7b2-5de749ec5472',
     },
     {
