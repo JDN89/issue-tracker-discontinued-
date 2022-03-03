@@ -23,6 +23,7 @@ watch(store.getOpenIssues!, (value) => {
         group="Issues"
         item-key="id"
         ghost-class="ghost"
+        animation=" 400"
       >
         <template #item="{ element }">
           <div
