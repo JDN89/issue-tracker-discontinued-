@@ -6,6 +6,9 @@ declare module 'vue' {
   export interface GlobalComponents {
     HeaderGuest: typeof import('./src/components/HeaderGuest.vue')['default']
     HeaderUser: typeof import('./src/components/HeaderUser.vue')['default']
+    IssueCard: typeof import('./src/components/IssueCard.vue')['default']
+    KabanBoard: typeof import('./src/components/KabanBoard.vue')['default']
+    SideBar: typeof import('./src/components/SideBar.vue')['default']
   }
 }
 

@@ -7,6 +7,9 @@ import type { Issue, Project } from '~/types/interfaces'
 
 interface State {
   OpenIssues: Issue [] | null
+  InProgress: Issue [] | null
+  Test: Issue [] | null
+  Done: Issue[] | null
   Projects: Project []| null
 
 }
@@ -24,6 +27,7 @@ export const useProjectStore = defineStore({
         id: uuidv4(),
         title: 'Project 2',
       }],
+
     OpenIssues: [{
       id: uuidv4(),
       title: 'Add discount code to checkout page',
@@ -77,6 +81,41 @@ export const useProjectStore = defineStore({
     },
 
     ],
+    InProgress: [{
+      id: uuidv4(),
+      title: 'create a cart button',
+      description: '  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec nibh at urna fringilla posuere. Maecenas aliquam mollis faucibus. Nulla tempor diam massa, eget convallis arcu fringilla tempor. Nullam interdum, magna et cursus sodales, ex tellus sodales justo, ac rhoncus lacus libero vel ligula. Sed molestie a magna gravida blandit. ',
+      date: 'Sep 14',
+      type: 'Feature Request',
+      urgency: 'low',
+      projectId: 'f18ebf07-3888-4cc6-b7b2-5de749ec5472',
+
+    },
+    {
+      id: uuidv4(),
+      title: 'Provide documentation on functionality',
+      description: '  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec nibh at urna fringilla posuere. Maecenas aliquam mollis faucibus. Nulla tempor diam massa, eget convallis arcu fringilla tempor. Nullam interdum, magna et cursus sodales, ex tellus sodales justo, ac rhoncus lacus libero vel ligula. Sed molestie a magna gravida blandit. ',
+
+      date: 'Sep 12',
+      type: 'Feature Request',
+      urgency: 'low',
+      projectId: 'f18ebf07-3888-4cc6-b7b2-5de749ec5472',
+
+    },
+    {
+      id: uuidv4(),
+      title: 'Design shopping cart',
+      description: '  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec nibh at urna fringilla posuere. Maecenas aliquam mollis faucibus. Nulla tempor diam massa, eget convallis arcu fringilla tempor. Nullam interdum, magna et cursus sodales, ex tellus sodales justo, ac rhoncus lacus libero vel ligula. Sed molestie a magna gravida blandit. ',
+
+      date: 'Sep 9',
+      type: 'Design',
+      urgency: 'low',
+      projectId: 'f18ebf07-3888-4cc6-b7b2-5de749ec5472',
+    },
+
+    ],
+    Test: null,
+    Done: null,
 
   }),
 
@@ -97,15 +136,6 @@ export const useProjectStore = defineStore({
     async updateOpenIssuesDb(value: Issue[]) {
       console.log(value)
     },
-    /*
-    logout() {
-      this.$patch({
-        name: '',
-        isAdmin: false,
-      })
-
-      // we could do other stuff like redirecting the user
-    }, */
 
   },
 
