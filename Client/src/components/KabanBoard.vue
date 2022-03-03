@@ -22,6 +22,7 @@ watch(store.getOpenIssues!, (value) => {
         :list="store.getOpenIssues!"
         group="Issues"
         item-key="id"
+        ghost-class="ghost"
       >
         <template #item="{ element }">
           <div
@@ -34,3 +35,7 @@ watch(store.getOpenIssues!, (value) => {
     </div>
   </div>
 </template>
+
+<style scoped>
+
+</style>
