@@ -8,7 +8,10 @@ declare module 'vue' {
     HeaderGuest: typeof import('./src/components/HeaderGuest.vue')['default']
     HeaderUser: typeof import('./src/components/HeaderUser.vue')['default']
     IssueCard: typeof import('./src/components/IssueCard.vue')['default']
+    IssuesInProgress: typeof import('./src/components/IssuesInProgress.vue')['default']
     KabanBoard: typeof import('./src/components/KabanBoard.vue')['default']
+    OpenIssues: typeof import('./src/components/OpenIssues.vue')['default']
+    ReviewIssues: typeof import('./src/components/ReviewIssues.vue')['default']
     SideBar: typeof import('./src/components/SideBar.vue')['default']
   }
 }
