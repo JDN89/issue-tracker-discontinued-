@@ -35,3 +35,5 @@ watch(store.getOpenIssues!, (value) => {
     </div>
   </div>
 </template>
+
+<style scoped></style>
