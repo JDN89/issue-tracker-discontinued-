@@ -1,6 +1,5 @@
 <script setup lang="ts">
 const props = defineProps<{ type: string } >()
-// console.log(props.type)
 
 const myTextMap = new Map<string, string>([['Design', 'text-purple-800'], ['Feature Request', 'text-teal-800'], ['Backend', 'text-blue-800'], ['QA', 'text-green-800'], ['default', 'text-teal-800']])
 
