@@ -4,15 +4,16 @@
 
 declare module 'vue' {
   export interface GlobalComponents {
-    Badge: typeof import('./src/components/Badge.vue')['default']
-    HeaderGuest: typeof import('./src/components/HeaderGuest.vue')['default']
-    HeaderUser: typeof import('./src/components/HeaderUser.vue')['default']
-    IssueCard: typeof import('./src/components/IssueCard.vue')['default']
-    IssuesInProgress: typeof import('./src/components/IssuesInProgress.vue')['default']
-    KabanBoard: typeof import('./src/components/KabanBoard.vue')['default']
-    OpenIssues: typeof import('./src/components/OpenIssues.vue')['default']
-    ReviewIssues: typeof import('./src/components/ReviewIssues.vue')['default']
+    Badge: typeof import('./src/components/kabanboard/issue/Badge.vue')['default']
+    HeaderGuest: typeof import('./src/components/header/HeaderGuest.vue')['default']
+    HeaderUser: typeof import('./src/components/header/HeaderUser.vue')['default']
+    IssueCard: typeof import('./src/components/kabanboard/issue/IssueCard.vue')['default']
+    IssuesInProgress: typeof import('./src/components/kabanboard/IssuesInProgress.vue')['default']
+    KabanBoard: typeof import('./src/components/kabanboard/KabanBoard.vue')['default']
+    OpenIssues: typeof import('./src/components/kabanboard/OpenIssues.vue')['default']
+    ReviewIssues: typeof import('./src/components/kabanboard/ReviewIssues.vue')['default']
     SideBar: typeof import('./src/components/SideBar.vue')['default']
+    Urgency: typeof import('./src/components/kabanboard/issue/Urgency.vue')['default']
   }
 }
 
