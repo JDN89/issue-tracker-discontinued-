@@ -137,10 +137,20 @@ export const useProjectStore = defineStore({
       console.log(value)
     },
 
+    // =========================================
+    // ===========   UPDATE ISSUESINPROGRESS  ===============
+    // only udpate don,t refresh list, state persists in Pinia while on page and gets loaded from db upon mount
+    // =========================================
+
+    async updateIssueInProgressDb(value: Issue[]) {
+      console.log(value)
+    },
+
   },
 
   getters: {
     getOpenIssues: (state: State) => state.OpenIssues,
+    getIssuesInProgress: (state: State) => state.InProgress,
     getProjects: (state: State) => state.Projects,
 
   },
