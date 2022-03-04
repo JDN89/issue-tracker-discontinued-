@@ -3,7 +3,6 @@
 import { useRouter } from 'vue-router'
 
 onBeforeMount(async() => {
-  console.log('this works')
   const router = useRouter()
   const token = window.localStorage.getItem('token')
   const username = window.localStorage.getItem('username')
