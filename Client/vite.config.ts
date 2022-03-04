@@ -45,7 +45,7 @@ export default defineConfig({
         ['hover', 'cursor-pointer transform transition ease-in-out duration-200 duration-500  select-none sm:hover:scale-109 xl:hover:scale-110'],
         ['rounded-border', 'border rounded-2xl hover:border-2 dark:border-1 dark:border-gray-400 dark:hover:border-light-100'],
         ['square-border', 'border rounded-md hover:border-2 dark:border-1 dark:border-gray-400 dark:hover:border-light-100'],
-        ['ghost', 'bg-red-400'],
+        ['ghost', 'bg-teal-400'],
       ],
       presets: [
         presetUno(),
