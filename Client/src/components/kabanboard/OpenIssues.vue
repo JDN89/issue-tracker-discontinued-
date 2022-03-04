@@ -21,7 +21,7 @@ watch(store.getOpenIssues!, async(value) => {
     animation=" 100"
   >
     <template #item="{ element }">
-      <div class=" m-2 ">
+      <div class="m-2 ">
         <IssueCard :title="element.title" :urgency="element.urgency" :date="element.date" :type="element.type" />
       </div>
     </template>

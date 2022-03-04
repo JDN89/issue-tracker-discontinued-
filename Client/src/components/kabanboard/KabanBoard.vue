@@ -1,7 +1,5 @@
 <script setup lang="ts">
 
-import IssuesInProgress from './IssuesInProgress.vue'
-
 </script>
 
 <template>
