@@ -168,7 +168,59 @@ export const useProjectStore = defineStore({
 
     ],
 
-    Done: null,
+    Done: [{
+      id: uuidv4(),
+      title: 'Create login page',
+      description: '  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec nibh at urna fringilla posuere. Maecenas aliquam mollis faucibus. Nulla tempor diam massa, eget convallis arcu fringilla tempor. Nullam interdum, magna et cursus sodales, ex tellus sodales justo, ac rhoncus lacus libero vel ligula. Sed molestie a magna gravida blandit. ',
+      date: 'Sep 14',
+      type: 'Design',
+      urgency: 'medium',
+      projectId: 'f18ebf07-3888-4cc6-b7b2-5de749ec5472',
+
+    },
+    {
+      id: uuidv4(),
+      title: 'create register page',
+      description: '  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec nibh at urna fringilla posuere. Maecenas aliquam mollis faucibus. Nulla tempor diam massa, eget convallis arcu fringilla tempor. Nullam interdum, magna et cursus sodales, ex tellus sodales justo, ac rhoncus lacus libero vel ligula. Sed molestie a magna gravida blandit. ',
+
+      date: 'Crete KabanBoard',
+      type: 'Backend',
+      urgency: 'low',
+      projectId: 'f18ebf07-3888-4cc6-b7b2-5de749ec5472',
+
+    },
+    {
+      id: uuidv4(),
+      title: 'Implement vue draggable',
+      description: '  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec nibh at urna fringilla posuere. Maecenas aliquam mollis faucibus. Nulla tempor diam massa, eget convallis arcu fringilla tempor. Nullam interdum, magna et cursus sodales, ex tellus sodales justo, ac rhoncus lacus libero vel ligula. Sed molestie a magna gravida blandit. ',
+
+      date: 'Sep 9',
+      type: 'QA',
+      urgency: 'low',
+      projectId: 'f18ebf07-3888-4cc6-b7b2-5de749ec5472',
+    },
+    {
+      id: uuidv4(),
+      title: 'Add total sum to checkout page',
+      description: '  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec nibh at urna fringilla posuere. Maecenas aliquam mollis faucibus. Nulla tempor diam massa, eget convallis arcu fringilla tempor. Nullam interdum, magna et cursus sodales, ex tellus sodales justo, ac rhoncus lacus libero vel ligula. Sed molestie a magna gravida blandit. ',
+
+      date: 'Sep 14',
+      type: 'Feature Request',
+      urgency: 'medium',
+      projectId: 'f18ebf07-3888-4cc6-b7b2-5de749ec5472',
+    },
+    {
+      id: uuidv4(),
+      title: 'review LoginUserInterface flow',
+      description: '  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec nibh at urna fringilla posuere. Maecenas aliquam mollis faucibus. Nulla tempor diam massa, eget convallis arcu fringilla tempor. Nullam interdum, magna et cursus sodales, ex tellus sodales justo, ac rhoncus lacus libero vel ligula. Sed molestie a magna gravida blandit. ',
+
+      date: 'Sep 15',
+      type: 'QA',
+      urgency: 'high',
+      projectId: 'f18ebf07-3888-4cc6-b7b2-5de749ec5472',
+    },
+
+    ],
 
   }),
 
