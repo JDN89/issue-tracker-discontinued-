@@ -9,7 +9,7 @@ interface State {
   OpenIssues: Issue [] | null
   InProgress: Issue [] | null
   Review: Issue [] | null
-  Done: Issue[] | null
+  Closed: Issue[] | null
   Projects: Project []| null
 
 }
@@ -168,7 +168,7 @@ export const useProjectStore = defineStore({
 
     ],
 
-    Done: [{
+    Closed: [{
       id: uuidv4(),
       title: 'Create login page',
       description: '  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec nibh at urna fringilla posuere. Maecenas aliquam mollis faucibus. Nulla tempor diam massa, eget convallis arcu fringilla tempor. Nullam interdum, magna et cursus sodales, ex tellus sodales justo, ac rhoncus lacus libero vel ligula. Sed molestie a magna gravida blandit. ',
