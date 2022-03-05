@@ -129,12 +129,27 @@ export const useProjectStore = defineStore({
     },
 
     // =========================================
+    // ===========   GET OPENISSUES  ===============
+    // only udpate don,t refresh list, state persists in Pinia while on page and gets loaded from db upon mount
+    // =========================================
+
+    // get openiusses from db
+    // openIssues == db value
+    // on mounted store.getOpenIsusues
+
+    // =========================================
     // ===========   UPDATE OPENISSUES  ===============
     // only udpate don,t refresh list, state persists in Pinia while on page and gets loaded from db upon mount
     // =========================================
 
+    // seeing that the state is being saved in the pinia store during sessions
+    // we only need to send an update of the db design when the session ends -> beforeUnmount
+    // what if users loses iternet connection? demo app -> no need to think of this scenario
+    // in serious app -> send the new state with each drag event to the db or cache it and then send it in chuncks
     async updateOpenIssuesDb(value: Issue[]) {
       console.log(value)
+      // when you delete all items in one column, if value == null
+      // -> delete issues with project id == x and don't replace
     },
 
     // =========================================
@@ -143,6 +158,14 @@ export const useProjectStore = defineStore({
     // =========================================
 
     async updateIssueInProgressDb(value: Issue[]) {
+      // find id from dragged issue
+      // find out which one is dragged and where it has been dropped!!
+      // delete all the issues where project id - ID
+      // send project ID with the request
+      // insert the issues in the correct db with the new order
+      // simpler? delete form db dragged issue
+      // insert in db dragged issue
+
       console.log(value)
     },
 

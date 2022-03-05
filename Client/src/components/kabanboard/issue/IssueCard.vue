@@ -1,15 +1,15 @@
 <script setup lang="ts">
 const props = defineProps<{ title: string; urgency: string; date: string; type: string }>()
 
-const myUrgencyColorMap = new Map<string, string>([['medium', 'border-1'], ['low', 'border-dotted dark:border-dotted'], ['high', 'border-2 dark:border-2 dark:border-light-100 ']])
+const myUrgencyStyles = new Map<string, string>([['medium', 'border-1'], ['low', 'border-dotted dark:border-dotted'], ['high', 'border-2 dark:border-2 ']])
 
-const urgencyColor = computed(() => {
-  return myUrgencyColorMap.get(props.urgency)!
+const urgencyStyle = computed(() => {
+  return myUrgencyStyles.get(props.urgency)!
 })
 </script>
 
 <template>
-  <div class="square-border" :class="`${urgencyColor}`">
+  <div class="square-border" :class="`${urgencyStyle}`">
     <div
       class=" flex justify-between m-3"
     >
