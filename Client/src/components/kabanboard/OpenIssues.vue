@@ -10,9 +10,7 @@ const store = useProjectStore()
 // no need to send changes to the backend while your on the page and state gets saved in the store.
 // only when you leave the page send update to the db
 // update all the dbs
-watch(store.getOpenIssues!, async(value) => {
-  await store.updateOpenIssuesDb(value)
-})
+
 onBeforeUnmount(async() => {
   // seeing that the state is being saved in the pinia store during sessions
   // we only need to send an update of the db design when the session ends -> beforeUnmount

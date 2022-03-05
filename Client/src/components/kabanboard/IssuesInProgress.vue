@@ -4,11 +4,10 @@ import draggable from 'vuedraggable'
 import { useProjectStore } from '~/stores/projects'
 
 const store = useProjectStore()
-
-watch(store.getIssuesInProgress!, async(value) => {
-  await store.updateIssueInProgressDb(value)
+onBeforeUnmount(async() => {
+  if (store.getIssuesInProgress) await store.updateIssueInProgressDb(store.getIssuesInProgress)
+  else return null
 })
-
 </script>
 
 <template>
