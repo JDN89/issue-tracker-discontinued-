@@ -271,6 +271,8 @@ export const useProjectStore = defineStore({
   getters: {
     getOpenIssues: (state: State) => state.OpenIssues,
     getIssuesInProgress: (state: State) => state.InProgress,
+    getReview: (state: State) => state.Review,
+    getClosed: (state: State) => state.Closed,
     getProjects: (state: State) => state.Projects,
 
   },
