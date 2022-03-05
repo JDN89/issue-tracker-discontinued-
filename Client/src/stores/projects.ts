@@ -8,7 +8,7 @@ import type { Issue, Project } from '~/types/interfaces'
 interface State {
   OpenIssues: Issue [] | null
   InProgress: Issue [] | null
-  Test: Issue [] | null
+  Review: Issue [] | null
   Done: Issue[] | null
   Projects: Project []| null
 
@@ -114,7 +114,60 @@ export const useProjectStore = defineStore({
     },
 
     ],
-    Test: null,
+    Review: [{
+      id: uuidv4(),
+      title: 'Provide Documentation on state',
+      description: '  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec nibh at urna fringilla posuere. Maecenas aliquam mollis faucibus. Nulla tempor diam massa, eget convallis arcu fringilla tempor. Nullam interdum, magna et cursus sodales, ex tellus sodales justo, ac rhoncus lacus libero vel ligula. Sed molestie a magna gravida blandit. ',
+      date: 'Sep 14',
+      type: 'Design',
+      urgency: 'low',
+      projectId: 'f18ebf07-3888-4cc6-b7b2-5de749ec5472',
+
+    },
+    {
+      id: uuidv4(),
+      title: 'Design dropdown menu for shoppingCart',
+      description: '  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec nibh at urna fringilla posuere. Maecenas aliquam mollis faucibus. Nulla tempor diam massa, eget convallis arcu fringilla tempor. Nullam interdum, magna et cursus sodales, ex tellus sodales justo, ac rhoncus lacus libero vel ligula. Sed molestie a magna gravida blandit. ',
+
+      date: 'Sep 12',
+      type: 'Backend',
+      urgency: 'high',
+      projectId: 'f18ebf07-3888-4cc6-b7b2-5de749ec5472',
+
+    },
+    {
+      id: uuidv4(),
+      title: 'Display items in 4 grid columns',
+      description: '  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec nibh at urna fringilla posuere. Maecenas aliquam mollis faucibus. Nulla tempor diam massa, eget convallis arcu fringilla tempor. Nullam interdum, magna et cursus sodales, ex tellus sodales justo, ac rhoncus lacus libero vel ligula. Sed molestie a magna gravida blandit. ',
+
+      date: 'Sep 9',
+      type: 'QA',
+      urgency: 'medium',
+      projectId: 'f18ebf07-3888-4cc6-b7b2-5de749ec5472',
+    },
+    {
+      id: uuidv4(),
+      title: 'Add total sum to checkout page',
+      description: '  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec nibh at urna fringilla posuere. Maecenas aliquam mollis faucibus. Nulla tempor diam massa, eget convallis arcu fringilla tempor. Nullam interdum, magna et cursus sodales, ex tellus sodales justo, ac rhoncus lacus libero vel ligula. Sed molestie a magna gravida blandit. ',
+
+      date: 'Sep 14',
+      type: 'Feature Request',
+      urgency: 'high',
+      projectId: 'f18ebf07-3888-4cc6-b7b2-5de749ec5472',
+    },
+    {
+      id: uuidv4(),
+      title: 'review checkout flow',
+      description: '  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec nibh at urna fringilla posuere. Maecenas aliquam mollis faucibus. Nulla tempor diam massa, eget convallis arcu fringilla tempor. Nullam interdum, magna et cursus sodales, ex tellus sodales justo, ac rhoncus lacus libero vel ligula. Sed molestie a magna gravida blandit. ',
+
+      date: 'Sep 15',
+      type: 'QA',
+      urgency: 'low',
+      projectId: 'f18ebf07-3888-4cc6-b7b2-5de749ec5472',
+    },
+
+    ],
+
     Done: null,
 
   }),
@@ -158,14 +211,6 @@ export const useProjectStore = defineStore({
     // =========================================
 
     async updateIssueInProgressDb(value: Issue[]) {
-      // find id from dragged issue
-      // find out which one is dragged and where it has been dropped!!
-      // delete all the issues where project id - ID
-      // send project ID with the request
-      // insert the issues in the correct db with the new order
-      // simpler? delete form db dragged issue
-      // insert in db dragged issue
-
       console.log(value)
     },
 
