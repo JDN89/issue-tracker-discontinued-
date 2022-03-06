@@ -61,7 +61,28 @@ export const useProjectStore = defineStore({
     },
     {
       id: uuidv4(),
-      title: 'Add discount code to checkout page',
+      title: 'Provide documentation on integrations',
+      description: '  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec nibh at urna fringilla posuere. Maecenas aliquam mollis faucibus. Nulla tempor diam massa, eget convallis arcu fringilla tempor. Nullam interdum, magna et cursus sodales, ex tellus sodales justo, ac rhoncus lacus libero vel ligula. Sed molestie a magna gravida blandit. ',
+
+      date: 'Sep 12',
+      type: 'Backend',
+      urgency: 'high',
+      projectId: 'f18ebf07-3888-4cc6-b7b2-5de749ec5472',
+
+    },
+    {
+      id: uuidv4(),
+      title: 'shopping cart dropdown',
+      description: '  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec nibh at urna fringilla posuere. Maecenas aliquam mollis faucibus. Nulla tempor diam massa, eget convallis arcu fringilla tempor. Nullam interdum, magna et cursus sodales, ex tellus sodales justo, ac rhoncus lacus libero vel ligula. Sed molestie a magna gravida blandit. ',
+
+      date: 'Sep 9',
+      type: 'QA',
+      urgency: 'medium',
+      projectId: 'f18ebf07-3888-4cc6-b7b2-5de749ec5472',
+    },
+    {
+      id: uuidv4(),
+      title: 'test title of issue',
       description: '  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec nibh at urna fringilla posuere. Maecenas aliquam mollis faucibus. Nulla tempor diam massa, eget convallis arcu fringilla tempor. Nullam interdum, magna et cursus sodales, ex tellus sodales justo, ac rhoncus lacus libero vel ligula. Sed molestie a magna gravida blandit. ',
 
       date: 'Sep 14',
@@ -71,7 +92,7 @@ export const useProjectStore = defineStore({
     },
     {
       id: uuidv4(),
-      title: 'Test checkout flow',
+      title: 'Test flex grow kabanboard',
       description: '  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec nibh at urna fringilla posuere. Maecenas aliquam mollis faucibus. Nulla tempor diam massa, eget convallis arcu fringilla tempor. Nullam interdum, magna et cursus sodales, ex tellus sodales justo, ac rhoncus lacus libero vel ligula. Sed molestie a magna gravida blandit. ',
 
       date: 'Sep 15',
@@ -234,16 +255,43 @@ export const useProjectStore = defineStore({
     },
 
     // =========================================
-    // ===========   GET OPENISSUES  ===============
+    // ===========   FETCH OPENISSUES  ===============
     // only udpate don,t refresh list, state persists in Pinia while on page and gets loaded from db upon mount
     // =========================================
 
-    // get openiusses from db
-    // openIssues == db value
-    // on mounted store.getOpenIsusues
+    async fetchOpenIssues() {
+      await console.log('fetch open issues')
+    },
 
     // =========================================
-    // ===========   UPDATE OPENISSUES  ===============
+    // ===========   FETCH ISSUES IN PROGRESS  ===============
+    // only udpate don,t refresh list, state persists in Pinia while on page and gets loaded from db upon mount
+    // =========================================
+
+    async fetchIssuesInProgress() {
+      await console.log('fetch issues in progress')
+    },
+
+    // =========================================
+    // ===========   FETCH ISSUES TO BE TESTED   ===============
+    // only udpate don,t refresh list, state persists in Pinia while on page and gets loaded from db upon mount
+    // =========================================
+
+    async fetchIssuesToBeReviewed() {
+      await console.log('fetch issues to be reviewed')
+    },
+
+    // =========================================
+    // ===========   FETCH CLOSED ISSUES  ===============
+    // only udpate don,t refresh list, state persists in Pinia while on page and gets loaded from db upon mount
+    // =========================================
+
+    async fetchClosedIssues() {
+      await console.log('fetch closed issues')
+    },
+
+    // =========================================
+    // ===========   UPDATE OPEN ISSUES  ===============
     // only udpate don,t refresh list, state persists in Pinia while on page and gets loaded from db upon mount
     // =========================================
 
@@ -258,11 +306,28 @@ export const useProjectStore = defineStore({
     },
 
     // =========================================
-    // ===========   UPDATE ISSUESINPROGRESS  ===============
+    // ===========   UPDATE ISSUES INPROGRESS  ===============
     // only udpate don,t refresh list, state persists in Pinia while on page and gets loaded from db upon mount
     // =========================================
 
     async updateIssueInProgressDb(value: Issue[]) {
+      console.log(value)
+    },
+
+    // =========================================
+    // ===========   UPDATE TO BE TESTED  ===============
+    // only udpate don,t refresh list, state persists in Pinia while on page and gets loaded from db upon mount
+    // =========================================
+
+    async updateIssuesToBeTested(value: Issue[]) {
+      console.log(value)
+    },
+    // =========================================
+    // ===========   UPDATE CLOSED ISSUES  ===============
+    // only udpate don,t refresh list, state persists in Pinia while on page and gets loaded from db upon mount
+    // =========================================
+
+    async updateClosedIssues(value: Issue[]) {
       console.log(value)
     },
 
