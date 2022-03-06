@@ -7,16 +7,17 @@ const props = defineProps<{ username: string }>()
 
 <template>
   <HeaderUser />
+  <h1 text-2xl pb-3>
+    Hi, {{ props.username.toUpperCase() }}
+  </h1>
 
-  <div id="container" class="flex flex-row mx-auto justify-center py-10">
-    <div id="main" class="order-2 flex-1 h-96">
-      <h1 text-2xl pb-3>
-        Hi, {{ props.username.toUpperCase() }}
-      </h1>
-      <KabanBoard />
+  <div id="container" class="flex flex-row justify-center py-10">
+    <div id="main" class="order-2">
+      <KabanBoard class="m-7 p-5 h-auto dark:bg-dark-500 rounded-border  w-auto mx-auto flex-row" />
     </div>
-
-    <SideBar pt-7 mr-7 />
+    <div id="sideBar" class="order-1 ">
+      <SideBar class="h-auto bg-light-100 dark:bg-dark-500 rounded-border border-r p-5 m-7" />
+    </div>
   </div>
 </template>
 
