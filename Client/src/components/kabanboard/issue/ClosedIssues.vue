@@ -5,7 +5,7 @@ import { useProjectStore } from '~/stores/projects'
 
 const store = useProjectStore()
 onBeforeUnmount(async() => {
-  if (store.getIssuesInProgress) await store.updateIssueInProgressDb(store.getIssuesInProgress)
+  if (store.getClosed) await store.updateClosedIssues(store.getClosed)
   else return null
 })
 </script>
@@ -13,7 +13,7 @@ onBeforeUnmount(async() => {
 <template>
   <draggable
 
-    :list="store.getIssuesInProgress!"
+    :list="store.getClosed!"
     group="Issues"
     item-key="id"
     ghost-class="ghost"
