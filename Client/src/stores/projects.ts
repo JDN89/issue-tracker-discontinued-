@@ -20,11 +20,13 @@ export const useProjectStore = defineStore({
     Projects: [
       {
         id: 'f18ebf07-3888-4cc6-b7b2-5de749ec5472',
+        userId: 'uuid',
         title: 'Project 1',
 
       },
       {
         id: uuidv4(),
+        userId: 'uuid',
         title: 'Project 2',
       }],
 
@@ -255,12 +257,20 @@ export const useProjectStore = defineStore({
     },
 
     // =========================================
+    // ===========   FETCH Projects  ===============
+    // =========================================
+    async fetchProjects() {
+      await console.log('fetch project: where userId = id')
+    },
+
+    // =========================================
     // ===========   FETCH OPENISSUES  ===============
     // only udpate don,t refresh list, state persists in Pinia while on page and gets loaded from db upon mount
     // =========================================
 
-    async fetchOpenIssues() {
-      await console.log('fetch open issues')
+    async fetchOpenIssues(userId: string, projectId: string) {
+      await console.log('fetch open issues where id = project id || project.id[o] on mounted')
+      return { userId, projectId }
     },
 
     // =========================================

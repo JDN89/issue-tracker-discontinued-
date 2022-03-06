@@ -1,8 +1,19 @@
 
 <script setup lang="ts">
 
+import { useProjectStore } from '~/stores/projects'
 const props = defineProps<{ username: string }>()
 
+const store = useProjectStore()
+
+onBeforeMount(async() => {
+  // onbefore mount load the first project in the array!! fetch project[0].id
+  await store.fetchProjects()
+  await store.fetchOpenIssues('userId', 'store.getProjects[0]')
+  await store.fetchIssuesInProgress()
+  await store.fetchIssuesToBeReviewed()
+  await store.fetchClosedIssues()
+})
 </script>
 
 <template>

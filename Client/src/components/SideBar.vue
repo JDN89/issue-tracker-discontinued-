@@ -2,6 +2,16 @@
 import { useProjectStore } from '~/stores/projects'
 
 const store = useProjectStore()
+
+const fetchProject = async(id: string) => {
+  // fetch project when ID !== current project  Id
+  // store current project id in store
+  return null
+  // await store.fetchOpenIssues()
+  // await store.fetchIssuesInProgress()
+  // await store.fetchIssuesInProgress()
+  // await store.fetchClosedIssues()
+}
 </script>
 
 <template>
@@ -10,7 +20,7 @@ const store = useProjectStore()
       My Projects
     </h1>
     <ul>
-      <li v-for="project in store.getProjects" :key="project.id" class="square-border my-2">
+      <li v-for="project in store.getProjects" :key="project.id" class="square-border my-2" @click="fetchProject(project.id)">
         {{ project.title }}
       </li>
     </ul>

@@ -1,19 +1,19 @@
 <script setup lang="ts">
-
 import { useRouter } from 'vue-router'
 import { useProjectStore } from '~/stores/projects'
-
-const store = useProjectStore()
 
 onBeforeMount(async() => {
   const router = useRouter()
   const token = window.localStorage.getItem('token')
   const username = window.localStorage.getItem('username')
+  const store = useProjectStore()
 
   if (token && username)
 
     await router.push(`/hi/${encodeURIComponent(username)}`)
-  await store.fetchOpenIssues()
+    // fetch project[0].id
+  await store.fetchProjects()
+  await store.fetchOpenIssues('userId', 'store.getProjects[0]')
   await store.fetchIssuesInProgress()
   await store.fetchIssuesToBeReviewed()
   await store.fetchClosedIssues()
