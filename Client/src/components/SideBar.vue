@@ -10,11 +10,11 @@ const store = useProjectStore()
       My Projects
     </h1>
     <ul>
-      <li v-for="project in store.getProjects" :key="project.id" class="square-border">
+      <li v-for="project in store.getProjects" :key="project.id" class="square-border my-2">
         {{ project.title }}
       </li>
     </ul>
-    <button btn>
+    <button class="btn mb-2">
       add project
     </button>
   </div>
