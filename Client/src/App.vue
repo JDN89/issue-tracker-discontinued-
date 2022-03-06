@@ -1,6 +1,9 @@
 <script setup lang="ts">
 
 import { useRouter } from 'vue-router'
+import { useProjectStore } from '~/stores/projects'
+
+const store = useProjectStore()
 
 onBeforeMount(async() => {
   const router = useRouter()
@@ -10,6 +13,10 @@ onBeforeMount(async() => {
   if (token && username)
 
     await router.push(`/hi/${encodeURIComponent(username)}`)
+  await store.fetchOpenIssues()
+  await store.fetchIssuesInProgress()
+  await store.fetchIssuesToBeReviewed()
+  await store.fetchClosedIssues()
 })
 
 </script>
