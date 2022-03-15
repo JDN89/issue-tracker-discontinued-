@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "zaTx5Bo0bmL8gHnV1BPRbhKzn2bsFeh4WjCo1o6GTW02AWqp+3J6MUY1ZQN39nRkUiD+lRRoik+II35WOLerGQ==",
+  "dgSpecHash": "HcP3SIijlxkKg4kiO3AU2kQS44CYbiAsfwYDSEkA7cHrleqQalOlQAHUacy7/uTy9+6Y8JgNT0nhK+om/Av9Mw==",
   "success": true,
   "projectFilePath": "/home/jan/Coding/Projects/issue-tracker/Infrastructure/Infrastructure.csproj",
   "expectedPackageFiles": [
     "/home/jan/.nuget/packages/microsoft.aspnetcore.cryptography.internal/6.0.2/microsoft.aspnetcore.cryptography.internal.6.0.2.nupkg.sha512",
     "/home/jan/.nuget/packages/microsoft.aspnetcore.cryptography.keyderivation/6.0.2/microsoft.aspnetcore.cryptography.keyderivation.6.0.2.nupkg.sha512",
     "/home/jan/.nuget/packages/microsoft.aspnetcore.identity.entityframeworkcore/6.0.2/microsoft.aspnetcore.identity.entityframeworkcore.6.0.2.nupkg.sha512",
+    "/home/jan/.nuget/packages/microsoft.csharp/4.5.0/microsoft.csharp.4.5.0.nupkg.sha512",
     "/home/jan/.nuget/packages/microsoft.entityframeworkcore/6.0.2/microsoft.entityframeworkcore.6.0.2.nupkg.sha512",
     "/home/jan/.nuget/packages/microsoft.entityframeworkcore.abstractions/6.0.2/microsoft.entityframeworkcore.abstractions.6.0.2.nupkg.sha512",
     "/home/jan/.nuget/packages/microsoft.entityframeworkcore.analyzers/6.0.2/microsoft.entityframeworkcore.analyzers.6.0.2.nupkg.sha512",
@@ -22,11 +23,16 @@
     "/home/jan/.nuget/packages/microsoft.extensions.logging.abstractions/6.0.0/microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
     "/home/jan/.nuget/packages/microsoft.extensions.options/6.0.0/microsoft.extensions.options.6.0.0.nupkg.sha512",
     "/home/jan/.nuget/packages/microsoft.extensions.primitives/6.0.0/microsoft.extensions.primitives.6.0.0.nupkg.sha512",
+    "/home/jan/.nuget/packages/microsoft.identitymodel.jsonwebtokens/6.16.0/microsoft.identitymodel.jsonwebtokens.6.16.0.nupkg.sha512",
+    "/home/jan/.nuget/packages/microsoft.identitymodel.logging/6.16.0/microsoft.identitymodel.logging.6.16.0.nupkg.sha512",
+    "/home/jan/.nuget/packages/microsoft.identitymodel.tokens/6.16.0/microsoft.identitymodel.tokens.6.16.0.nupkg.sha512",
     "/home/jan/.nuget/packages/npgsql/6.0.2/npgsql.6.0.2.nupkg.sha512",
     "/home/jan/.nuget/packages/npgsql.entityframeworkcore.postgresql/6.0.2/npgsql.entityframeworkcore.postgresql.6.0.2.nupkg.sha512",
     "/home/jan/.nuget/packages/system.collections.immutable/6.0.0/system.collections.immutable.6.0.0.nupkg.sha512",
     "/home/jan/.nuget/packages/system.diagnostics.diagnosticsource/6.0.0/system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",
-    "/home/jan/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+    "/home/jan/.nuget/packages/system.identitymodel.tokens.jwt/6.16.0/system.identitymodel.tokens.jwt.6.16.0.nupkg.sha512",
+    "/home/jan/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "/home/jan/.nuget/packages/system.security.cryptography.cng/4.5.0/system.security.cryptography.cng.4.5.0.nupkg.sha512"
   ],
   "logs": []
 }

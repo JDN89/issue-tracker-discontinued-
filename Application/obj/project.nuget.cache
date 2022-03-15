@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "vIwFjZ+mfaqTEcz1/+XXR/X1ngFae0OqIENWCtKsoQa3f7mygWKoeaz1HUzV0TAz4q5x4mQXCmtEkDKAPXm3kw==",
+  "dgSpecHash": "Z+FPnxr0Wj80rD13KId0kxxnRwJIYgAb5/DqDYWIM363GZe/HQpWi3p4KdjCMCtxZIWwT9NqBZ0uqk1UDxteZA==",
   "success": true,
   "projectFilePath": "/home/jan/Coding/Projects/issue-tracker/Application/Application.csproj",
   "expectedPackageFiles": [
@@ -26,8 +26,6 @@
     "/home/jan/.nuget/packages/microsoft.identitymodel.jsonwebtokens/6.16.0/microsoft.identitymodel.jsonwebtokens.6.16.0.nupkg.sha512",
     "/home/jan/.nuget/packages/microsoft.identitymodel.logging/6.16.0/microsoft.identitymodel.logging.6.16.0.nupkg.sha512",
     "/home/jan/.nuget/packages/microsoft.identitymodel.tokens/6.16.0/microsoft.identitymodel.tokens.6.16.0.nupkg.sha512",
-    "/home/jan/.nuget/packages/npgsql/6.0.2/npgsql.6.0.2.nupkg.sha512",
-    "/home/jan/.nuget/packages/npgsql.entityframeworkcore.postgresql/6.0.2/npgsql.entityframeworkcore.postgresql.6.0.2.nupkg.sha512",
     "/home/jan/.nuget/packages/system.collections.immutable/6.0.0/system.collections.immutable.6.0.0.nupkg.sha512",
     "/home/jan/.nuget/packages/system.diagnostics.diagnosticsource/6.0.0/system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",
     "/home/jan/.nuget/packages/system.identitymodel.tokens.jwt/6.16.0/system.identitymodel.tokens.jwt.6.16.0.nupkg.sha512",

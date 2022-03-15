@@ -9,7 +9,6 @@
       "Application/1.0.0": {
         "dependencies": {
           "Domain": "1.0.0",
-          "Infrastructure": "1.0.0",
           "System.IdentityModel.Tokens.Jwt": "6.16.0"
         },
         "runtime": {
@@ -247,31 +246,6 @@
           }
         }
       },
-      "Npgsql/6.0.2": {
-        "dependencies": {
-          "System.Runtime.CompilerServices.Unsafe": "6.0.0"
-        },
-        "runtime": {
-          "lib/net6.0/Npgsql.dll": {
-            "assemblyVersion": "6.0.2.0",
-            "fileVersion": "6.0.2.0"
-          }
-        }
-      },
-      "Npgsql.EntityFrameworkCore.PostgreSQL/6.0.2": {
-        "dependencies": {
-          "Microsoft.EntityFrameworkCore": "6.0.2",
-          "Microsoft.EntityFrameworkCore.Abstractions": "6.0.2",
-          "Microsoft.EntityFrameworkCore.Relational": "6.0.2",
-          "Npgsql": "6.0.2"
-        },
-        "runtime": {
-          "lib/net6.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll": {
-            "assemblyVersion": "6.0.2.0",
-            "fileVersion": "6.0.2.0"
-          }
-        }
-      },
       "System.Collections.Immutable/6.0.0": {
         "dependencies": {
           "System.Runtime.CompilerServices.Unsafe": "6.0.0"
@@ -302,15 +276,6 @@
         },
         "runtime": {
           "Domain.dll": {}
-        }
-      },
-      "Infrastructure/1.0.0": {
-        "dependencies": {
-          "Domain": "1.0.0",
-          "Npgsql.EntityFrameworkCore.PostgreSQL": "6.0.2"
-        },
-        "runtime": {
-          "Infrastructure.dll": {}
         }
       }
     }
@@ -475,20 +440,6 @@
       "path": "microsoft.identitymodel.tokens/6.16.0",
       "hashPath": "microsoft.identitymodel.tokens.6.16.0.nupkg.sha512"
     },
-    "Npgsql/6.0.2": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-j/BJY/1lqtu5ssfGEi9D+qJ/3OMrK8ZdicsW4SldV49CahRVXVHldj636ucVcEqJPNDI0h+/PWJD7oHsQ/cFAQ==",
-      "path": "npgsql/6.0.2",
-      "hashPath": "npgsql.6.0.2.nupkg.sha512"
-    },
-    "Npgsql.EntityFrameworkCore.PostgreSQL/6.0.2": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-2snTLONAs26dKdtInX4CAorkE//eDMOAVifh2EXZ/REzq5typb7MkENIix3Ma6ycukmAzCUw+br2AFdXmkmxbw==",
-      "path": "npgsql.entityframeworkcore.postgresql/6.0.2",
-      "hashPath": "npgsql.entityframeworkcore.postgresql.6.0.2.nupkg.sha512"
-    },
     "System.Collections.Immutable/6.0.0": {
       "type": "package",
       "serviceable": true,
@@ -525,11 +476,6 @@
       "hashPath": "system.security.cryptography.cng.4.5.0.nupkg.sha512"
     },
     "Domain/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Infrastructure/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

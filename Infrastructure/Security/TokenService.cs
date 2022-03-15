@@ -1,12 +1,14 @@
+using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using Application.Interfaces;
 using Domain.Entities;
 using Microsoft.Extensions.Configuration;
-using System.IdentityModel.Tokens.Jwt;
-using Application.Common.Interfaces;
 using Microsoft.IdentityModel.Tokens;
 
-namespace Application.Common.Services;
+    
+    
+namespace Infrastructure.Security;
 
 public class TokenService:IJwtGenerator
 {

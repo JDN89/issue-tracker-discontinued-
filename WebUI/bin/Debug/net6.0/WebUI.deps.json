@@ -412,7 +412,6 @@
       "Application/1.0.0": {
         "dependencies": {
           "Domain": "1.0.0",
-          "Infrastructure": "1.0.0",
           "System.IdentityModel.Tokens.Jwt": "6.16.0"
         },
         "runtime": {
@@ -429,8 +428,11 @@
       },
       "Infrastructure/1.0.0": {
         "dependencies": {
+          "Application": "1.0.0",
           "Domain": "1.0.0",
-          "Npgsql.EntityFrameworkCore.PostgreSQL": "6.0.2"
+          "Microsoft.IdentityModel.Tokens": "6.16.0",
+          "Npgsql.EntityFrameworkCore.PostgreSQL": "6.0.2",
+          "System.IdentityModel.Tokens.Jwt": "6.16.0"
         },
         "runtime": {
           "Infrastructure.dll": {}

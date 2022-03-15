@@ -1,6 +1,6 @@
 using System.Security.Claims;
-using Application.Common.Services;
 using Domain.Entities;
+using Infrastructure.Security;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;

@@ -19,8 +19,22 @@ public class Seed
                 },
                 new AppUser
                 {
-                    UserName = "jane",
-                    Email = "jane@test.com"
+                    UserName = "jan",
+                    Email = "jan@test.com",
+                    Projects = new List<Project>
+                    {
+                        new Project
+                        {
+                            ProjectId = new Guid(),
+                            Title = "Online Store"
+                        },
+
+                        new Project
+                        {
+                            ProjectId = new Guid(),
+                            Title = "Issue Tracker"
+                        },
+                    }
                 },
                 new AppUser
                 {
@@ -33,6 +47,7 @@ public class Seed
             {
                 await userManager.CreateAsync(user, "Pa$$w0rd");
             }
+
 
             await context.SaveChangesAsync();
         }
