@@ -1,5 +1,3 @@
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
-
 namespace Domain.Entities;
 
 public class OpenIssue : BaseIssue
