@@ -11,7 +11,7 @@ public class DataContext:IdentityDbContext<AppUser>
     {
     }
 public DbSet<Project> Projects { get; set; }
-
+public DbSet<OpenIssue> OpenIssues { get; set; }
 
  
 }

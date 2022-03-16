@@ -5,4 +5,5 @@ public class Project
     public Guid ProjectId { get; set; }
     public string Title { get; set; }
     public AppUser AppUser { get; set; }
+    public ICollection<OpenIssue> OpenIssues { get; set; }
     }

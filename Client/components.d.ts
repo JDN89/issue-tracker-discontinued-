@@ -5,7 +5,7 @@
 declare module 'vue' {
   export interface GlobalComponents {
     Badge: typeof import('./src/components/kabanboard/issue/Badge.vue')['default']
-    ClosedIssues: typeof import('./src/components/kabanboard/issue/ClosedIssues.vue')['default']
+    ClosedIssues: typeof import('./src/components/kabanboard/ClosedIssues.vue')['default']
     HeaderGuest: typeof import('./src/components/header/HeaderGuest.vue')['default']
     HeaderUser: typeof import('./src/components/header/HeaderUser.vue')['default']
     IssueCard: typeof import('./src/components/kabanboard/issue/IssueCard.vue')['default']

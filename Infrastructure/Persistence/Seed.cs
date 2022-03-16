@@ -26,7 +26,32 @@ public class Seed
                         new Project
                         {
                             ProjectId = new Guid(),
-                            Title = "Online Store"
+                            Title = "Online Store",
+                            OpenIssues = new List<OpenIssue>
+                            {
+                                new OpenIssue
+                                {
+                                    OpenIssueId = new Guid(),
+                                    Title = "Add right margin to Checkout button",
+                                    Urgency = "High",
+                                    Date = DateTime.UtcNow,
+                                    Type = "Design",
+                                    Description =
+                                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec nibh at urna fringilla posuere. Maecenas aliquam mollis faucibus. Nulla tempor diam massa, eget convallis arcu fringilla tempor. Nullam interdum, magna et cursus sodales, ex tellus sodales justo, ac rhoncus lacus libero vel ligula. Sed molestie a magna gravida blandit."
+                                },
+                                new OpenIssue
+                                {
+                                    OpenIssueId = new Guid(),
+                                    Title = "Add discount code to the checkout page",
+                                    Urgency = "High",
+                                    
+                                    Date = DateTime.UtcNow,
+                                  //  Date = new DateTime(2022, 03, 15, 01, 01,01 ),
+                                    Type = "Design",
+                                    Description =
+                                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec nibh at urna fringilla posuere. Maecenas aliquam mollis faucibus. Nulla tempor diam massa, eget convallis arcu fringilla tempor. Nullam interdum, magna et cursus sodales, ex tellus sodales justo, ac rhoncus lacus libero vel ligula. Sed molestie a magna gravida blandit."
+                                }
+                            }
                         },
 
                         new Project
