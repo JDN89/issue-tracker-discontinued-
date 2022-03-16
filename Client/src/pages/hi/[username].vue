@@ -24,10 +24,10 @@ onBeforeMount(async() => {
 
   <div id="container" class="flex flex-row justify-center py-10">
     <div id="main" class="order-2">
-      <KabanBoard class="m-7 p-5 h-auto dark:bg-dark-500 rounded-border  w-auto mx-auto flex-row" />
+      <KabanBoard class="m-7 p-5 h-auto bg-light-300 dark:bg-dark-500 rounded-border  w-auto mx-auto flex-row" />
     </div>
     <div id="sideBar" class="order-1 ">
-      <SideBar class="h-auto bg-light-100 dark:bg-dark-500 rounded-border border-r p-5 m-7" />
+      <SideBar class="h-auto bg-light-300 dark:bg-dark-500 rounded-border border-r p-5 m-7" />
     </div>
   </div>
 </template>
