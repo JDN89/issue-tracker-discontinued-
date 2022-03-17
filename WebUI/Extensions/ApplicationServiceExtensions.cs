@@ -1,5 +1,7 @@
 using Application;
+using Application.Interfaces;
 using Infrastructure.Persistence;
+using Infrastructure.Security;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
@@ -51,7 +53,7 @@ public static class ApplicationServiceExtensions
         services.AddHttpContextAccessor(); 
         services.AddMediatR(typeof(MediatREntrypoint).Assembly);
         //  services.AddAutoMapper(typeof(MappingProfiles).Assembly);
-        // services.AddScoped<IUserAccessor, UserAccessor>();
+         services.AddScoped<IUserAccessor, UserAccessor>();
 
         // services.AddSignalR();
 
