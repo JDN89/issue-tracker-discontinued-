@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "x4kMk3mWKSgNG1XQWzEV1K4RHXeGvwR65fVcSI54qwP+qOIAJdJBCSCQYy36U1++q2TyqLHQWUFZ/swOYrxE6A==",
+  "dgSpecHash": "RW2LeSs6+yoDQ+dMzjl8mFxMUjj38TEZ/rVZBZArZoCw98Hvja8Jm2652MAN+TbevBD91goVHEod6ok9Ad5kww==",
   "success": true,
   "projectFilePath": "/home/jan/Coding/Projects/issue-tracker/WebUI/WebUI.csproj",
   "expectedPackageFiles": [
+    "/home/jan/.nuget/packages/automapper/11.0.0/automapper.11.0.0.nupkg.sha512",
+    "/home/jan/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/11.0.0/automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
     "/home/jan/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
     "/home/jan/.nuget/packages/mediatr/10.0.1/mediatr.10.0.1.nupkg.sha512",
     "/home/jan/.nuget/packages/mediatr.contracts/1.0.1/mediatr.contracts.1.0.1.nupkg.sha512",
@@ -17,7 +19,7 @@
     "/home/jan/.nuget/packages/microsoft.aspnetcore.identity.entityframeworkcore/6.0.2/microsoft.aspnetcore.identity.entityframeworkcore.6.0.2.nupkg.sha512",
     "/home/jan/.nuget/packages/microsoft.aspnetcore.spaservices.extensions/6.0.2/microsoft.aspnetcore.spaservices.extensions.6.0.2.nupkg.sha512",
     "/home/jan/.nuget/packages/microsoft.aspnetcore.webutilities/2.2.0/microsoft.aspnetcore.webutilities.2.2.0.nupkg.sha512",
-    "/home/jan/.nuget/packages/microsoft.csharp/4.5.0/microsoft.csharp.4.5.0.nupkg.sha512",
+    "/home/jan/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
     "/home/jan/.nuget/packages/microsoft.entityframeworkcore/6.0.2/microsoft.entityframeworkcore.6.0.2.nupkg.sha512",
     "/home/jan/.nuget/packages/microsoft.entityframeworkcore.abstractions/6.0.2/microsoft.entityframeworkcore.abstractions.6.0.2.nupkg.sha512",
     "/home/jan/.nuget/packages/microsoft.entityframeworkcore.analyzers/6.0.2/microsoft.entityframeworkcore.analyzers.6.0.2.nupkg.sha512",

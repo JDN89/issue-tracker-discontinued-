@@ -5,13 +5,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Common\Behaviour" />
-    <Folder Include="Common\Mappings" />
-    <Folder Include="Common\Services" />
     <Folder Include="Projects" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="10.0.1" />
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.16.0" />
   </ItemGroup>

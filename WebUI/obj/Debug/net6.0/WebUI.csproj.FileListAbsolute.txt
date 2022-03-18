@@ -55,3 +55,5 @@
 /home/jan/Coding/Projects/issue-tracker/WebUI/bin/Debug/net6.0/Microsoft.IdentityModel.Tokens.dll
 /home/jan/Coding/Projects/issue-tracker/WebUI/bin/Debug/net6.0/System.IdentityModel.Tokens.Jwt.dll
 /home/jan/Coding/Projects/issue-tracker/WebUI/bin/Debug/net6.0/Microsoft.AspNetCore.SpaServices.Extensions.dll
+/home/jan/Coding/Projects/issue-tracker/WebUI/bin/Debug/net6.0/AutoMapper.dll
+/home/jan/Coding/Projects/issue-tracker/WebUI/bin/Debug/net6.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll

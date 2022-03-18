@@ -1,4 +1,5 @@
 using Application;
+using Application.Core;
 using Application.Interfaces;
 using Infrastructure.Persistence;
 using Infrastructure.Security;
@@ -52,7 +53,7 @@ public static class ApplicationServiceExtensions
 
         services.AddHttpContextAccessor(); 
         services.AddMediatR(typeof(MediatREntrypoint).Assembly);
-        //  services.AddAutoMapper(typeof(MappingProfiles).Assembly);
+        services.AddAutoMapper(typeof(MappingProfiles).Assembly);
          services.AddScoped<IUserAccessor, UserAccessor>();
 
         // services.AddSignalR();
