@@ -7,24 +7,14 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace WebUI.Controllers;
 
-
 [ApiController]
 [Route("api/[controller]")]
-public class ProjectController :ControllerBase  
-
+public class ProjectController : BaseController
 {
-    private readonly IMediator _mediator;
-
-    public ProjectController(IUserAccessor userAccessor, IMediator mediator)
-    {
-        _mediator = mediator;
-    }
-
     [HttpGet]
     [Authorize]
-    public async Task<ActionResult<List<GetProjectDto>>> Test ()
+    public async Task<ActionResult<List<GetProjectDto>>> Test()
     {
-        return await _mediator.Send(new GetAllProjects.Query());
-
+        return await Mediator.Send(new GetAllProjects.Query());
     }
 }
