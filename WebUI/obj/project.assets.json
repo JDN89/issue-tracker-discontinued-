@@ -733,7 +733,9 @@
         "dependencies": {
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "11.0.0",
           "Domain": "1.0.0",
+          "Infrastructure": "1.0.0",
           "MediatR.Extensions.Microsoft.DependencyInjection": "10.0.1",
+          "Microsoft.AspNetCore.Http.Abstractions": "2.2.0",
           "System.IdentityModel.Tokens.Jwt": "6.16.0"
         },
         "compile": {
@@ -760,7 +762,6 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "Application": "1.0.0",
           "Domain": "1.0.0",
           "Microsoft.AspNetCore.Http": "2.2.2",
           "Microsoft.IdentityModel.Tokens": "6.16.0",

@@ -1,6 +1,7 @@
 using Application;
 using Application.Core;
 using Application.Interfaces;
+using Application.Security;
 using Infrastructure.Persistence;
 using Infrastructure.Security;
 using MediatR;

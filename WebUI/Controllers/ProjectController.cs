@@ -1,7 +1,7 @@
 using Application.DTOs;
 using Application.Interfaces;
-using AutoMapper;
-using Infrastructure.Persistence;
+using Application.Projects.Queries;
+using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -13,24 +13,18 @@ namespace WebUI.Controllers;
 public class ProjectController :ControllerBase  
 
 {
-    private readonly IUserAccessor _userAccessor;
-    private readonly DataContext _context;
-    private readonly IMapper _mapper;
+    private readonly IMediator _mediator;
 
-    public ProjectController(IUserAccessor userAccessor, DataContext context, IMapper mapper)
+    public ProjectController(IUserAccessor userAccessor, IMediator mediator)
     {
-        _userAccessor = userAccessor;
-        _context = context;
-        _mapper = mapper;
+        _mediator = mediator;
     }
 
     [HttpGet]
     [Authorize]
-    public async Task<List<GetProjectDto>> Test ()
+    public async Task<ActionResult<List<GetProjectDto>>> Test ()
     {
-        var userId =  _userAccessor.GetCurrentUserId();
-        var projects = _context.Projects.Where(x => x.AppUser.Id == userId);
-        var response = projects.Select(p => _mapper.Map<GetProjectDto>(p)).ToList();
-        return response;
+        return await _mediator.Send(new GetAllProjects.Query());
+
     }
 }

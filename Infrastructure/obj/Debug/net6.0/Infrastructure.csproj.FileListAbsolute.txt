@@ -13,5 +13,3 @@
 /home/jan/Coding/Projects/issue-tracker/Infrastructure/obj/Debug/net6.0/Infrastructure.dll
 /home/jan/Coding/Projects/issue-tracker/Infrastructure/obj/Debug/net6.0/ref/Infrastructure.dll
 /home/jan/Coding/Projects/issue-tracker/Infrastructure/obj/Debug/net6.0/Infrastructure.pdb
-/home/jan/Coding/Projects/issue-tracker/Infrastructure/bin/Debug/net6.0/Application.dll
-/home/jan/Coding/Projects/issue-tracker/Infrastructure/bin/Debug/net6.0/Application.pdb

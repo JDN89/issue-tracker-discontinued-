@@ -2,7 +2,7 @@ using System.Security.Claims;
 using Application.Interfaces;
 using Microsoft.AspNetCore.Http;
 
-namespace Infrastructure.Security;
+namespace Application.Security;
 
 public class UserAccessor : IUserAccessor
 {
