@@ -1,4 +1,4 @@
-namespace WebUI.DTOs;
+namespace Application.DTOs.User;
 // info we send back to the user
 public class UserDto
 {

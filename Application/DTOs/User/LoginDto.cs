@@ -1,4 +1,4 @@
-namespace WebUI.DTOs;
+namespace Application.DTOs.User;
 
 public class LoginDto
 {

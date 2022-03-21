@@ -1,11 +1,11 @@
 using System.Security.Claims;
+using Application.DTOs.User;
 using Domain.Entities;
 using Infrastructure.Security;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using WebUI.DTOs;
 
 namespace WebUI.Controllers;
 
@@ -30,9 +30,9 @@ public class AccountController : ControllerBase
     public async Task<ActionResult<UserDto>> Login(LoginDto loginDto)
     {
         var user = await _userManager.FindByEmailAsync(loginDto.Email);
-        Console.WriteLine(loginDto.Email);
 
         if (user == null) return Unauthorized("Invalid email");
+        
         // sets a flag if a user has confirmed his email address
         //if (!user.EmailConfirmed) return Unauthorized("Email not confirmed");
 
@@ -53,14 +53,12 @@ public class AccountController : ControllerBase
         if (await _userManager.Users.AnyAsync(x => x.Email == registerDto.Email))
         {
             ModelState.AddModelError("email", "Email taken");
-            Console.WriteLine("fired");
             return ValidationProblem();
         }
 
         if (await _userManager.Users.AnyAsync(x => x.UserName == registerDto.Username))
         {
             ModelState.AddModelError("username", "Username taken");
-            Console.WriteLine("fired");
             return ValidationProblem();
         }
 
