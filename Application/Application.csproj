@@ -6,7 +6,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Projects\Commands" />
+    <Folder Include="Handlers\Issues\Commands" />
   </ItemGroup>
 
   <ItemGroup>
@@ -19,7 +19,7 @@
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+    <Nullable>disable</Nullable>
   </PropertyGroup>
 
 </Project>

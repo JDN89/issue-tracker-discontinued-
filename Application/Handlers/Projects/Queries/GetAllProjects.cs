@@ -1,11 +1,11 @@
 using Application.DTOs;
 using Application.Interfaces;
 using AutoMapper;
-using MediatR;
 using Infrastructure.Persistence;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
 
-namespace Application.Projects.Queries;
+namespace Application.Handlers.Projects.Queries;
 
 public class GetAllProjects
 {
