@@ -25,16 +25,6 @@ export const useUserStore = defineStore({
 
   actions: {
 
-    /*
-    logout() {
-      this.$patch({
-        name: '',
-        isAdmin: false,
-      })
-
-      // we could do other stuff like redirecting the user
-    }, */
-
     async registerUser() {
       if (this.userRegistrationData) {
         console.log(this.userRegistrationData)

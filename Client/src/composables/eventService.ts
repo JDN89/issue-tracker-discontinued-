@@ -16,7 +16,13 @@ export default {
   async loginUser(user: LoginUserInterface) {
     return await apiClient.post('account/login', user)
   },
-
+  async getAllProjects(token: string) {
+    return await apiClient.get('project', {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+  },
   // async retrieveSession(token: string) {
   //   return await apiClient.post('account/retrieveSession', token)
   // },
