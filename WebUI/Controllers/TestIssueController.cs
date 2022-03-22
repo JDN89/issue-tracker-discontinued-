@@ -1,5 +1,4 @@
 using Application.DTOs;
-using Application.DTOs.User;
 using Application.Handlers.Issues.Queries;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
