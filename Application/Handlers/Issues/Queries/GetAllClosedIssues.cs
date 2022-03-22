@@ -6,14 +6,14 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Application.Handlers.Issues.Queries;
 
-public class GetAllIssuesInProgress
+public class GetAllClosedIssues
 {
-    public class Query : IRequest<List<GetIssueInProgressDto>>
+    public class Query : IRequest<List<GetClosedIssueDto>>
     {
         public Guid ProjId { get; set; }
     }
 
-    public class Handler : IRequestHandler<Query, List<GetIssueInProgressDto>>
+    public class Handler : IRequestHandler<Query, List<GetClosedIssueDto>>
     {
         private readonly DataContext _context;
         private readonly IMapper _mapper;
@@ -24,10 +24,10 @@ public class GetAllIssuesInProgress
             _mapper = mapper;
         }
 
-        public async Task<List<GetIssueInProgressDto>> Handle(Query request, CancellationToken cancellationToken)
+        public async Task<List<GetClosedIssueDto>> Handle(Query request, CancellationToken cancellationToken)
         {
-            var issuesInProgress = _context.inProgressIssues.Where(x => x.ProjectId == request.ProjId);
-            return await issuesInProgress.Select(o => _mapper.Map<GetIssueInProgressDto>(o))
+            var closedIssues = _context.ClosedIssues.Where(x => x.ProjectId == request.ProjId);
+            return await closedIssues.Select(o => _mapper.Map<GetClosedIssueDto>(o))
                 .ToListAsync(cancellationToken);
         }
     }
