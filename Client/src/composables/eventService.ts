@@ -48,6 +48,13 @@ export default {
       },
     })
   },
+  async getAllClosedIssues(token: string, projectId: string) {
+    return await apiClient.get(`ClosedIssues/${projectId}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+  },
   // async retrieveSession(token: string) {
   //   return await apiClient.post('account/retrieveSession', token)
   // },

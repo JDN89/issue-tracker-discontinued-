@@ -1,7 +1,6 @@
 // @ts-check
 import { acceptHMRUpdate, defineStore } from 'pinia'
 import axios from 'axios'
-import { v4 as uuidv4 } from 'uuid'
 // import axios from 'axios'
 import type { Issue, Project } from '~/types/interfaces'
 // import eventService from '~/composables/eventService'
@@ -22,232 +21,13 @@ export const useProjectStore = defineStore({
   id: 'Projects',
   state: (): State => ({
     Projects: null,
-    /* [
-      {
-        projectId: 'f18ebf07-3888-4cc6-b7b2-5de749ec5472',
-        title: 'Project 1',
+    OpenIssues: null,
 
-      },
-      {
-        projectId: uuidv4(),
-        title: 'Project 2',
-      }] */
+    InProgress: null,
 
-    OpenIssues: [{
-      id: uuidv4(),
-      title: 'Add discount code to checkout page',
-      description: '  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec nibh at urna fringilla posuere. Maecenas aliquam mollis faucibus. Nulla tempor diam massa, eget convallis arcu fringilla tempor. Nullam interdum, magna et cursus sodales, ex tellus sodales justo, ac rhoncus lacus libero vel ligula. Sed molestie a magna gravida blandit. ',
-      date: 'Sep 14',
-      type: 'Design',
-      urgency: 'low',
-      projectId: 'f18ebf07-3888-4cc6-b7b2-5de749ec5472',
+    Review: null,
 
-    },
-    {
-      id: uuidv4(),
-      title: 'Provide documentation on integrations',
-      description: '  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec nibh at urna fringilla posuere. Maecenas aliquam mollis faucibus. Nulla tempor diam massa, eget convallis arcu fringilla tempor. Nullam interdum, magna et cursus sodales, ex tellus sodales justo, ac rhoncus lacus libero vel ligula. Sed molestie a magna gravida blandit. ',
-
-      date: 'Sep 12',
-      type: 'Backend',
-      urgency: 'high',
-      projectId: 'f18ebf07-3888-4cc6-b7b2-5de749ec5472',
-
-    },
-    {
-      id: uuidv4(),
-      title: 'Design shopping cart dropdown',
-      description: '  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec nibh at urna fringilla posuere. Maecenas aliquam mollis faucibus. Nulla tempor diam massa, eget convallis arcu fringilla tempor. Nullam interdum, magna et cursus sodales, ex tellus sodales justo, ac rhoncus lacus libero vel ligula. Sed molestie a magna gravida blandit. ',
-
-      date: 'Sep 9',
-      type: 'QA',
-      urgency: 'medium',
-      projectId: 'f18ebf07-3888-4cc6-b7b2-5de749ec5472',
-    },
-    {
-      id: uuidv4(),
-      title: 'Provide documentation on integrations',
-      description: '  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec nibh at urna fringilla posuere. Maecenas aliquam mollis faucibus. Nulla tempor diam massa, eget convallis arcu fringilla tempor. Nullam interdum, magna et cursus sodales, ex tellus sodales justo, ac rhoncus lacus libero vel ligula. Sed molestie a magna gravida blandit. ',
-
-      date: 'Sep 12',
-      type: 'Backend',
-      urgency: 'high',
-      projectId: 'f18ebf07-3888-4cc6-b7b2-5de749ec5472',
-
-    },
-    {
-      id: uuidv4(),
-      title: 'shopping cart dropdown',
-      description: '  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec nibh at urna fringilla posuere. Maecenas aliquam mollis faucibus. Nulla tempor diam massa, eget convallis arcu fringilla tempor. Nullam interdum, magna et cursus sodales, ex tellus sodales justo, ac rhoncus lacus libero vel ligula. Sed molestie a magna gravida blandit. ',
-
-      date: 'Sep 9',
-      type: 'QA',
-      urgency: 'medium',
-      projectId: 'f18ebf07-3888-4cc6-b7b2-5de749ec5472',
-    },
-    {
-      id: uuidv4(),
-      title: 'test title of issue',
-      description: '  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec nibh at urna fringilla posuere. Maecenas aliquam mollis faucibus. Nulla tempor diam massa, eget convallis arcu fringilla tempor. Nullam interdum, magna et cursus sodales, ex tellus sodales justo, ac rhoncus lacus libero vel ligula. Sed molestie a magna gravida blandit. ',
-
-      date: 'Sep 14',
-      type: 'Feature Request',
-      urgency: 'high',
-      projectId: 'f18ebf07-3888-4cc6-b7b2-5de749ec5472',
-    },
-    {
-      id: uuidv4(),
-      title: 'Test flex grow kabanboard',
-      description: '  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec nibh at urna fringilla posuere. Maecenas aliquam mollis faucibus. Nulla tempor diam massa, eget convallis arcu fringilla tempor. Nullam interdum, magna et cursus sodales, ex tellus sodales justo, ac rhoncus lacus libero vel ligula. Sed molestie a magna gravida blandit. ',
-
-      date: 'Sep 15',
-      type: 'QA',
-      urgency: 'low',
-      projectId: 'f18ebf07-3888-4cc6-b7b2-5de749ec5472',
-    },
-
-    ],
-    InProgress: [{
-      id: uuidv4(),
-      title: 'create a cart button',
-      description: '  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec nibh at urna fringilla posuere. Maecenas aliquam mollis faucibus. Nulla tempor diam massa, eget convallis arcu fringilla tempor. Nullam interdum, magna et cursus sodales, ex tellus sodales justo, ac rhoncus lacus libero vel ligula. Sed molestie a magna gravida blandit. ',
-      date: 'Sep 14',
-      type: 'Feature Request',
-      urgency: 'low',
-      projectId: 'f18ebf07-3888-4cc6-b7b2-5de749ec5472',
-
-    },
-    {
-      id: uuidv4(),
-      title: 'Provide documentation on functionality',
-      description: '  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec nibh at urna fringilla posuere. Maecenas aliquam mollis faucibus. Nulla tempor diam massa, eget convallis arcu fringilla tempor. Nullam interdum, magna et cursus sodales, ex tellus sodales justo, ac rhoncus lacus libero vel ligula. Sed molestie a magna gravida blandit. ',
-
-      date: 'Sep 12',
-      type: 'Feature Request',
-      urgency: 'low',
-      projectId: 'f18ebf07-3888-4cc6-b7b2-5de749ec5472',
-
-    },
-    {
-      id: uuidv4(),
-      title: 'Design shopping cart',
-      description: '  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec nibh at urna fringilla posuere. Maecenas aliquam mollis faucibus. Nulla tempor diam massa, eget convallis arcu fringilla tempor. Nullam interdum, magna et cursus sodales, ex tellus sodales justo, ac rhoncus lacus libero vel ligula. Sed molestie a magna gravida blandit. ',
-
-      date: 'Sep 9',
-      type: 'Design',
-      urgency: 'low',
-      projectId: 'f18ebf07-3888-4cc6-b7b2-5de749ec5472',
-    },
-
-    ],
-    Review: [{
-      id: uuidv4(),
-      title: 'Provide Documentation on state',
-      description: '  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec nibh at urna fringilla posuere. Maecenas aliquam mollis faucibus. Nulla tempor diam massa, eget convallis arcu fringilla tempor. Nullam interdum, magna et cursus sodales, ex tellus sodales justo, ac rhoncus lacus libero vel ligula. Sed molestie a magna gravida blandit. ',
-      date: 'Sep 14',
-      type: 'Design',
-      urgency: 'low',
-      projectId: 'f18ebf07-3888-4cc6-b7b2-5de749ec5472',
-
-    },
-    {
-      id: uuidv4(),
-      title: 'Design dropdown menu for shoppingCart',
-      description: '  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec nibh at urna fringilla posuere. Maecenas aliquam mollis faucibus. Nulla tempor diam massa, eget convallis arcu fringilla tempor. Nullam interdum, magna et cursus sodales, ex tellus sodales justo, ac rhoncus lacus libero vel ligula. Sed molestie a magna gravida blandit. ',
-
-      date: 'Sep 12',
-      type: 'Backend',
-      urgency: 'high',
-      projectId: 'f18ebf07-3888-4cc6-b7b2-5de749ec5472',
-
-    },
-    {
-      id: uuidv4(),
-      title: 'Display items in 4 grid columns',
-      description: '  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec nibh at urna fringilla posuere. Maecenas aliquam mollis faucibus. Nulla tempor diam massa, eget convallis arcu fringilla tempor. Nullam interdum, magna et cursus sodales, ex tellus sodales justo, ac rhoncus lacus libero vel ligula. Sed molestie a magna gravida blandit. ',
-
-      date: 'Sep 9',
-      type: 'QA',
-      urgency: 'medium',
-      projectId: 'f18ebf07-3888-4cc6-b7b2-5de749ec5472',
-    },
-    {
-      id: uuidv4(),
-      title: 'Add total sum to checkout page',
-      description: '  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec nibh at urna fringilla posuere. Maecenas aliquam mollis faucibus. Nulla tempor diam massa, eget convallis arcu fringilla tempor. Nullam interdum, magna et cursus sodales, ex tellus sodales justo, ac rhoncus lacus libero vel ligula. Sed molestie a magna gravida blandit. ',
-
-      date: 'Sep 14',
-      type: 'Feature Request',
-      urgency: 'high',
-      projectId: 'f18ebf07-3888-4cc6-b7b2-5de749ec5472',
-    },
-    {
-      id: uuidv4(),
-      title: 'review checkout flow',
-      description: '  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec nibh at urna fringilla posuere. Maecenas aliquam mollis faucibus. Nulla tempor diam massa, eget convallis arcu fringilla tempor. Nullam interdum, magna et cursus sodales, ex tellus sodales justo, ac rhoncus lacus libero vel ligula. Sed molestie a magna gravida blandit. ',
-
-      date: 'Sep 15',
-      type: 'QA',
-      urgency: 'low',
-      projectId: 'f18ebf07-3888-4cc6-b7b2-5de749ec5472',
-    },
-
-    ],
-
-    Closed: [{
-      id: uuidv4(),
-      title: 'Create login page',
-      description: '  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec nibh at urna fringilla posuere. Maecenas aliquam mollis faucibus. Nulla tempor diam massa, eget convallis arcu fringilla tempor. Nullam interdum, magna et cursus sodales, ex tellus sodales justo, ac rhoncus lacus libero vel ligula. Sed molestie a magna gravida blandit. ',
-      date: 'Sep 14',
-      type: 'Design',
-      urgency: 'medium',
-      projectId: 'f18ebf07-3888-4cc6-b7b2-5de749ec5472',
-
-    },
-    {
-      id: uuidv4(),
-      title: 'create register page',
-      description: '  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec nibh at urna fringilla posuere. Maecenas aliquam mollis faucibus. Nulla tempor diam massa, eget convallis arcu fringilla tempor. Nullam interdum, magna et cursus sodales, ex tellus sodales justo, ac rhoncus lacus libero vel ligula. Sed molestie a magna gravida blandit. ',
-
-      date: 'Crete KabanBoard',
-      type: 'Backend',
-      urgency: 'low',
-      projectId: 'f18ebf07-3888-4cc6-b7b2-5de749ec5472',
-
-    },
-    {
-      id: uuidv4(),
-      title: 'Implement vue draggable',
-      description: '  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec nibh at urna fringilla posuere. Maecenas aliquam mollis faucibus. Nulla tempor diam massa, eget convallis arcu fringilla tempor. Nullam interdum, magna et cursus sodales, ex tellus sodales justo, ac rhoncus lacus libero vel ligula. Sed molestie a magna gravida blandit. ',
-
-      date: 'Sep 9',
-      type: 'QA',
-      urgency: 'low',
-      projectId: 'f18ebf07-3888-4cc6-b7b2-5de749ec5472',
-    },
-    {
-      id: uuidv4(),
-      title: 'Add total sum to checkout page',
-      description: '  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec nibh at urna fringilla posuere. Maecenas aliquam mollis faucibus. Nulla tempor diam massa, eget convallis arcu fringilla tempor. Nullam interdum, magna et cursus sodales, ex tellus sodales justo, ac rhoncus lacus libero vel ligula. Sed molestie a magna gravida blandit. ',
-
-      date: 'Sep 14',
-      type: 'Feature Request',
-      urgency: 'medium',
-      projectId: 'f18ebf07-3888-4cc6-b7b2-5de749ec5472',
-    },
-    {
-      id: uuidv4(),
-      title: 'review LoginUserInterface flow',
-      description: '  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec nibh at urna fringilla posuere. Maecenas aliquam mollis faucibus. Nulla tempor diam massa, eget convallis arcu fringilla tempor. Nullam interdum, magna et cursus sodales, ex tellus sodales justo, ac rhoncus lacus libero vel ligula. Sed molestie a magna gravida blandit. ',
-
-      date: 'Sep 15',
-      type: 'QA',
-      urgency: 'high',
-      projectId: 'f18ebf07-3888-4cc6-b7b2-5de749ec5472',
-    },
-
-    ],
-
+    Closed: null,
   }),
 
   actions: {
@@ -263,17 +43,12 @@ export const useProjectStore = defineStore({
     // ===========   FETCH Projects  ===============
     // =========================================
     async fetchProjects() {
-      console.log('tieten')
-
       const userStore = useUserStore()
-      console.log(userStore.getToken)
 
       if (userStore.getToken) {
         await eventService.getAllProjects(userStore.getToken)
           .then((response) => {
-            console.log(response)
             this.Projects = response.data
-            console.log(this.Projects)
           }).catch((error) => {
             if (axios.isAxiosError(error)) {
               if (error.response) {
@@ -316,13 +91,9 @@ export const useProjectStore = defineStore({
                 console.log(error.response.headers)
               }
               else if (error.request) {
-                // The request was made but no response was received
-                // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
-                // http.ClientRequest in node.js
                 console.log(error.request)
               }
               else {
-                // Something happened in setting up the request that triggered an Error
                 console.log('Error', error.message)
               }
             }
@@ -341,8 +112,6 @@ export const useProjectStore = defineStore({
       if (userStore.getToken) {
         await eventService.getAllIssuesInProgress(userStore.getToken, projectId)
           .then((response) => {
-            console.log(response)
-
             this.InProgress = response.data
           }).catch((error) => {
             if (axios.isAxiosError(error)) {
@@ -352,13 +121,9 @@ export const useProjectStore = defineStore({
                 console.log(error.response.headers)
               }
               else if (error.request) {
-                // The request was made but no response was received
-                // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
-                // http.ClientRequest in node.js
                 console.log(error.request)
               }
               else {
-                // Something happened in setting up the request that triggered an Error
                 console.log('Error', error.message)
               }
             }
@@ -385,13 +150,9 @@ export const useProjectStore = defineStore({
                 console.log(error.response.headers)
               }
               else if (error.request) {
-                // The request was made but no response was received
-                // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
-                // http.ClientRequest in node.js
                 console.log(error.request)
               }
               else {
-                // Something happened in setting up the request that triggered an Error
                 console.log('Error', error.message)
               }
             }
@@ -404,8 +165,28 @@ export const useProjectStore = defineStore({
     // only udpate don,t refresh list, state persists in Pinia while on page and gets loaded from db upon mount
     // =========================================
 
-    async fetchClosedIssues() {
-      await console.log('fetch closed issues')
+    async fetchClosedIssues(projectId: string) {
+      const userStore = useUserStore()
+      if (userStore.getToken) {
+        await eventService.getAllClosedIssues(userStore.getToken, projectId)
+          .then((response) => {
+            this.Closed = response.data
+          }).catch((error) => {
+            if (axios.isAxiosError(error)) {
+              if (error.response) {
+                console.log(error.response?.data)
+                console.log(error.response.status)
+                console.log(error.response.headers)
+              }
+              else if (error.request) {
+                console.log(error.request)
+              }
+              else {
+                console.log('Error', error.message)
+              }
+            }
+          })
+      }
     },
 
     // =========================================

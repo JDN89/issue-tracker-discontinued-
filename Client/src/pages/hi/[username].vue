@@ -10,14 +10,12 @@ onBeforeMount(async() => {
   // onbefore mount load the first project in the array!! fetch project[0].id
   await store.fetchProjects()
   if (store.getProjects) {
-    console.log('GEEETC')
-
-    await store.fetchOpenIssues(store.getProjects[0].projectId)
-
-    await store.fetchAllReviewIssues(store.getProjects[0].projectId)
-    await store.fetchIssuesInProgress(store.getProjects[0].projectId)
+    const firstProject = store.getProjects[0].projectId
+    await store.fetchOpenIssues(firstProject)
+    await store.fetchAllReviewIssues(firstProject)
+    await store.fetchIssuesInProgress(firstProject)
+    await store.fetchClosedIssues(firstProject)
   }
-  await store.fetchClosedIssues()
 })
 </script>
 
