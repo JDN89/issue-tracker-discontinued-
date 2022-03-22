@@ -26,7 +26,7 @@ public class Seed
                         new Project
                         {
                             ProjectId = new Guid(),
-                            Title = "Online Store",
+                            Title = "Issue Tracker",
                             OpenIssues = new List<OpenIssue>
                             {
                                 new OpenIssue
@@ -175,7 +175,7 @@ public class Seed
                         new Project
                         {
                             ProjectId = new Guid(),
-                            Title = "Issue Tracker"
+                            Title = "Online Store"
                         },
                     }
                 },
