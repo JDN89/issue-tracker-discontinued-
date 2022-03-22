@@ -13,9 +13,10 @@ onBeforeMount(async() => {
     console.log('GEEETC')
 
     await store.fetchOpenIssues(store.getProjects[0].projectId)
+
+    await store.fetchAllReviewIssues(store.getProjects[0].projectId)
   }
   await store.fetchIssuesInProgress()
-  await store.fetchIssuesToBeReviewed()
   await store.fetchClosedIssues()
 })
 </script>

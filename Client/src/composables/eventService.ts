@@ -16,6 +16,9 @@ export default {
   async loginUser(user: LoginUserInterface) {
     return await apiClient.post('account/login', user)
   },
+
+  // ===========  Project Requests  ===============
+
   async getAllProjects(token: string) {
     return await apiClient.get('project', {
       headers: {
@@ -26,6 +29,13 @@ export default {
 
   async getAllOpenIssues(token: string, projectId: string) {
     return await apiClient.get(`openissue/${projectId}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+  },
+  async getAllReviewIssues(token: string, projectId: string) {
+    return await apiClient.get(`testissue/${projectId}`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },

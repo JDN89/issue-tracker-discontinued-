@@ -16,7 +16,6 @@ onBeforeMount(async() => {
     await router.push(`/hi/${encodeURIComponent(username)}`)
     // fetch project[0].id
   await store.fetchIssuesInProgress()
-  await store.fetchIssuesToBeReviewed()
   await store.fetchClosedIssues()
 })
 
