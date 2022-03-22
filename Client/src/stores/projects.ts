@@ -335,8 +335,35 @@ export const useProjectStore = defineStore({
     // only udpate don,t refresh list, state persists in Pinia while on page and gets loaded from db upon mount
     // =========================================
 
-    async fetchIssuesInProgress() {
-      await console.log('fetch issues in progress')
+    async fetchIssuesInProgress(projectId: string) {
+      const userStore = useUserStore()
+
+      if (userStore.getToken) {
+        await eventService.getAllIssuesInProgress(userStore.getToken, projectId)
+          .then((response) => {
+            console.log(response)
+
+            this.InProgress = response.data
+          }).catch((error) => {
+            if (axios.isAxiosError(error)) {
+              if (error.response) {
+                console.log(error.response?.data)
+                console.log(error.response.status)
+                console.log(error.response.headers)
+              }
+              else if (error.request) {
+                // The request was made but no response was received
+                // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
+                // http.ClientRequest in node.js
+                console.log(error.request)
+              }
+              else {
+                // Something happened in setting up the request that triggered an Error
+                console.log('Error', error.message)
+              }
+            }
+          })
+      }
     },
 
     // =========================================
@@ -346,13 +373,9 @@ export const useProjectStore = defineStore({
 
     async fetchAllReviewIssues(projectId: string) {
       const userStore = useUserStore()
-      console.log('FIIIIRRREEEE')
-
       if (userStore.getToken) {
         await eventService.getAllReviewIssues(userStore.getToken, projectId)
           .then((response) => {
-            console.log(response)
-
             this.Review = response.data
           }).catch((error) => {
             if (axios.isAxiosError(error)) {

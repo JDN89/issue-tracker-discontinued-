@@ -15,8 +15,8 @@ onBeforeMount(async() => {
     await store.fetchOpenIssues(store.getProjects[0].projectId)
 
     await store.fetchAllReviewIssues(store.getProjects[0].projectId)
+    await store.fetchIssuesInProgress(store.getProjects[0].projectId)
   }
-  await store.fetchIssuesInProgress()
   await store.fetchClosedIssues()
 })
 </script>

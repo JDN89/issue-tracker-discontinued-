@@ -34,6 +34,13 @@ export default {
       },
     })
   },
+  async getAllIssuesInProgress(token: string, projectId: string) {
+    return await apiClient.get(`issuesInProgress/${projectId}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+  },
   async getAllReviewIssues(token: string, projectId: string) {
     return await apiClient.get(`testissue/${projectId}`, {
       headers: {
