@@ -23,6 +23,14 @@ export default {
       },
     })
   },
+
+  async getAllOpenIssues(token: string, projectId: string) {
+    return await apiClient.get(`openissue/${projectId}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+  },
   // async retrieveSession(token: string) {
   //   return await apiClient.post('account/retrieveSession', token)
   // },

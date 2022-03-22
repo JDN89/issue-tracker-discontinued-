@@ -26,7 +26,7 @@ export interface Issue {
 
 }
 export interface Project {
-  id: string
+  projectId: string
 
   title: string
 

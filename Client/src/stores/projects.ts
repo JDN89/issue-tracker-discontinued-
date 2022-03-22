@@ -21,16 +21,17 @@ interface State {
 export const useProjectStore = defineStore({
   id: 'Projects',
   state: (): State => ({
-    Projects: [
+    Projects: null,
+    /* [
       {
-        id: 'f18ebf07-3888-4cc6-b7b2-5de749ec5472',
+        projectId: 'f18ebf07-3888-4cc6-b7b2-5de749ec5472',
         title: 'Project 1',
 
       },
       {
-        id: uuidv4(),
+        projectId: uuidv4(),
         title: 'Project 2',
-      }],
+      }] */
 
     OpenIssues: [{
       id: uuidv4(),
@@ -272,6 +273,7 @@ export const useProjectStore = defineStore({
           .then((response) => {
             console.log(response)
             this.Projects = response.data
+            console.log(this.Projects)
           }).catch((error) => {
             if (axios.isAxiosError(error)) {
               if (error.response) {
@@ -299,9 +301,35 @@ export const useProjectStore = defineStore({
     // only udpate don,t refresh list, state persists in Pinia while on page and gets loaded from db upon mount
     // =========================================
 
-    async fetchOpenIssues(userId: string, projectId: string) {
-      await console.log('fetch open issues where id = project id || project.id[o] on mounted')
-      return { userId, projectId }
+    async fetchOpenIssues(projectId: string) {
+      const userStore = useUserStore()
+      console.log(projectId)
+
+      if (userStore.getToken) {
+        await eventService.getAllOpenIssues(userStore.getToken, projectId)
+          .then((response) => {
+            console.log(response)
+            this.OpenIssues = response.data
+          }).catch((error) => {
+            if (axios.isAxiosError(error)) {
+              if (error.response) {
+                console.log(error.response?.data)
+                console.log(error.response.status)
+                console.log(error.response.headers)
+              }
+              else if (error.request) {
+                // The request was made but no response was received
+                // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
+                // http.ClientRequest in node.js
+                console.log(error.request)
+              }
+              else {
+                // Something happened in setting up the request that triggered an Error
+                console.log('Error', error.message)
+              }
+            }
+          })
+      }
     },
 
     // =========================================
