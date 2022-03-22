@@ -10,9 +10,9 @@ namespace WebUI.Controllers;
 public class OpenIssueController:BaseController
 {
 
-    [HttpGet]
+    [HttpGet("{projectId}")]
     [Authorize]
-    public async Task<ActionResult<List<GetOpenIssueDto>>> GetAllIssues([FromQuery] Guid projectId)
+    public async Task<ActionResult<List<GetOpenIssueDto>>> GetAllIssues(Guid projectId)
     {
         return await Mediator.Send(new GetAllOpenIssues.Query{ProjId = projectId});
     }
