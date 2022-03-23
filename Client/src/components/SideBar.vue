@@ -20,7 +20,7 @@ const fetchProject = async(id: string) => {
       My Projects
     </h1>
     <ul>
-      <li v-for="project in store.getProjects" :key="project.id" class="square-border my-2" @click="fetchProject(project.id)">
+      <li v-for="project in store.getProjects" :key="project.projectId" class="square-border my-2" @click="fetchProject(project.projectId)">
         {{ project.title }}
       </li>
     </ul>

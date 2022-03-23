@@ -4,9 +4,10 @@ import draggable from 'vuedraggable'
 import { useProjectStore } from '~/stores/projects'
 
 const store = useProjectStore()
-onBeforeUnmount(async() => {
-  if (store.getReview) await store.updateIssuesToBeTested(store.getReview)
-  else return null
+onBeforeUpdate(async() => {
+  watch(store.Review!, async(value) => {
+    await store.updateAllIssuesToBeTested(value)
+  })
 })
 </script>
 

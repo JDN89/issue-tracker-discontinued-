@@ -194,14 +194,9 @@ export const useProjectStore = defineStore({
     // only udpate don,t refresh list, state persists in Pinia while on page and gets loaded from db upon mount
     // =========================================
 
-    // seeing that the state is being saved in the pinia store during sessions
-    // we only need to send an update of the db design when the session ends -> beforeUnmount
-    // what if users loses iternet connection? demo app -> no need to think of this scenario
-    // in serious app -> send the new state with each drag event to the db or cache it and then send it in chuncks
-    async updateOpenIssuesDb(value: Issue[]) {
-      console.log(value)
-      // when you delete all items in one column, if value == null
-      // -> delete issues with project id == x and don't replace
+    async updateAllOpenIssues(openIssues: Issue[]) {
+      console.log(openIssues)
+      return console.log('fire')
     },
 
     // =========================================
@@ -209,8 +204,10 @@ export const useProjectStore = defineStore({
     // only udpate don,t refresh list, state persists in Pinia while on page and gets loaded from db upon mount
     // =========================================
 
-    async updateIssueInProgressDb(value: Issue[]) {
-      console.log(value)
+    async updateAllIssuesInProgress(issues: Issue[]) {
+      console.log('in progress')
+
+      console.log(issues)
     },
 
     // =========================================
@@ -218,16 +215,20 @@ export const useProjectStore = defineStore({
     // only udpate don,t refresh list, state persists in Pinia while on page and gets loaded from db upon mount
     // =========================================
 
-    async updateIssuesToBeTested(value: Issue[]) {
-      console.log(value)
+    async updateAllIssuesToBeTested(issues: Issue[]) {
+      console.log('review')
+
+      console.log(issues)
     },
     // =========================================
     // ===========   UPDATE CLOSED ISSUES  ===============
     // only udpate don,t refresh list, state persists in Pinia while on page and gets loaded from db upon mount
     // =========================================
 
-    async updateClosedIssues(value: Issue[]) {
-      console.log(value)
+    async updateAllClosedIssues(issues: Issue[]) {
+      console.log('closed')
+
+      console.log(issues)
     },
 
   },
