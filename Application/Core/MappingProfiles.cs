@@ -14,6 +14,7 @@ public class MappingProfiles : Profile
         CreateMap<GetOpenIssueDto, OpenIssue>();
         CreateMap<TestIssue, GetTestIssueDto>();
         CreateMap<InProgressIssue, GetIssueInProgressDto>();
+        CreateMap<GetIssueInProgressDto, InProgressIssue>();
         CreateMap<ClosedIssue, GetClosedIssueDto>();
     }
 }
