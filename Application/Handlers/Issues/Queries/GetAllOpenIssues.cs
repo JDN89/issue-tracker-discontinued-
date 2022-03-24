@@ -1,5 +1,4 @@
 using Application.DTOs;
-using Application.Interfaces;
 using AutoMapper;
 using Infrastructure.Persistence;
 using MediatR;
