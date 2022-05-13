@@ -6,4 +6,4 @@ The only solution I had was cloning this repository into another repo and contin
 
 - this repo is now deprecated
 - I will continue in dotnet-vue-issue-tracker https://github.com/JDN89/vue-dotnet-issue-tracker
-
+-
